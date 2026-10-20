@@ -9,14 +9,15 @@
   <meta property="og:title" content="Астро-Волга Такси — такси в Луганске">
   <meta property="og:description" content="Закажите поездку по телефону или в приложении.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/taxi-clean.png">
+  <meta property="og:image" content="assets/taxi-daylight.webp">
   <title>Астро-Волга Такси — такси в Луганске</title>
   <link rel="icon" type="image/svg+xml" href="assets/taxi-icon.svg">
   <link rel="preload" href="assets/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=pixels-1">
+  <link rel="preload" as="image" href="assets/taxi-daylight.webp">
+  <link rel="stylesheet" href="styles.css?v=daylight-1">
   <script src="config.js?v=clean-2" defer></script>
-  <script src="script.js?v=clean-2" defer></script>
+  <script src="script.js?v=city-1" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -24,6 +25,9 @@
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M5 15v5h14v-5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 9 2-5h10l2 5M4 9h16v9H4zM7 18v3m10-3v3M4 12H2m20 0h-2M7 13h1m8 0h1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-app" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
   </svg>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
@@ -45,44 +49,41 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <figure class="hero-scene" aria-hidden="true"><img src="assets/taxi-daylight.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async"></figure>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title">Такси<br><span>в Луганске.</span></h1>
-          <p class="lead">Закажите поездку по телефону<br class="desktop-break"> или в приложении Астро-Волга Такси.</p>
+          <p class="hero-kicker">Астро-Волга Такси · Луганск</p>
+          <h1 id="hero-title">Ваш город.<br><span>Ваше такси.</span></h1>
+          <p class="lead">Поездки по Луганску — по делам,<br>на встречу или домой.</p>
           <div class="hero-actions">
+            <p class="hero-action-title">Закажите поездку</p>
             <button class="button button-primary" type="button" data-action="call" data-position="hero" aria-label="Вызвать такси по телефону"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-phone>+7 (000) 000-00-00</span></button>
             <button class="button button-secondary" type="button" data-action="passenger" data-position="hero"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Скачать приложение</button>
           </div>
         </div>
-        <figure class="hero-visual">
-          <img src="assets/taxi-clean.webp" width="1400" height="700" alt="Белый автомобиль такси с синими акцентами и красным фонарём" fetchpriority="high" decoding="async">
-        </figure>
+      </div>
+    </section>
+
+    <section class="trust-section" id="trust" aria-labelledby="trust-title">
+      <div class="container trust-inner">
+        <h2 class="sr-only" id="trust-title">Почему выбирают Астро-Волга Такси</h2>
+        <div class="trust-grid">
+          <article class="trust-card"><span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Можно позвонить</h3><p>Обсудите маршрут и пожелания напрямую со службой.</p></article>
+          <article class="trust-card"><span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span><h3>Такси под рукой</h3><p>Заказывайте поездки в пассажирском приложении.</p></article>
+          <article class="trust-card"><span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg></span><h3>Тариф под ваши планы</h3><p>Економ, Комфорт и Люкс — выберите свой формат.</p></article>
+          <article class="trust-card"><span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><h3>По знакомому городу</h3><p>На работу, на встречу или домой — по Луганску.</p></article>
+        </div>
       </div>
     </section>
 
     <section class="section tariff-section" id="tariffs" aria-labelledby="tariffs-title" hidden>
       <div class="container">
-        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title">Поездка в вашем стиле.</h2></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><br>Пример наполнения, не действующие тарифы службы.</p></div>
+        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title">Выберите свою поездку.</h2></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><br>Пример наполнения, не действующие тарифы службы.</p></div>
         <div class="tariff-grid" data-tariff-list></div>
+        <p class="image-note">Автомобили на изображениях — иллюстрации классов. Модель при заказе может отличаться.</p>
       </div>
     </section>
-    <template id="tariff-template"><article class="tariff-card"><h3></h3><p class="tariff-description"></p><dl><div><dt>Посадка</dt><dd data-price="boarding"></dd></div><div><dt>За километр</dt><dd data-price="perKm"></dd></div><div><dt>За минуту</dt><dd data-price="perMinute"></dd></div></dl><p class="tariff-note"></p><button class="button button-secondary" type="button" data-action="call" data-position="tariffs">Заказать такси<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></article></template>
-
-    <section class="section trust-section" id="trust" aria-labelledby="trust-title">
-      <div class="container trust-inner">
-        <div class="trust-copy">
-          <p class="section-label">Рядом с вашими планами</p>
-          <h2 id="trust-title">Почему<br> выбирают нас.</h2>
-          <p>Привычные маршруты, удобный способ заказа и выбор формата поездки.</p>
-        </div>
-        <div class="trust-grid">
-          <article class="trust-card"><strong>2 способа</strong><h3>Заказать поездку</h3><p>Позвоните в службу или воспользуйтесь пассажирским приложением — как вам удобнее.</p></article>
-          <article class="trust-card"><strong>3 тарифа</strong><h3>Под разные планы</h3><p>Економ, Комфорт и Люкс — от повседневных дел до особого повода.</p></article>
-          <article class="trust-card"><strong>Луганск</strong><h3>Ваш город, ваши маршруты</h3><p>На работу, на встречу или домой. Такси для поездок по знакомому городу.</p></article>
-          <article class="trust-card"><strong>Водителям</strong><h3>Отдельное приложение</h3><p>Для сотрудничества со службой есть свой контакт и приложение водителя.</p></article>
-        </div>
-      </div>
-    </section>
+    <template id="tariff-template"><article class="tariff-card"><figure class="tariff-visual"><img data-tariff-image width="640" height="420" loading="lazy" decoding="async" alt=""></figure><div class="tariff-content"><h3></h3><p class="tariff-description"></p><dl><div><dt>Посадка</dt><dd data-price="boarding"></dd></div><div><dt>За километр</dt><dd data-price="perKm"></dd></div><div><dt>За минуту</dt><dd data-price="perMinute"></dd></div></dl><p class="tariff-note"></p><button class="button button-secondary" type="button" data-action="call" data-position="tariffs">Заказать такси<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></article></template>
 
     <section class="section passenger-section" id="passengers" aria-labelledby="passenger-title">
       <div class="container app-grid">
@@ -112,8 +113,9 @@
         <div class="app-content">
           <div class="section-copy">
             <p class="section-label">Пассажирам</p>
-            <h2 id="passenger-title">Ваше такси —<br>в вашем телефоне.</h2>
-            <p class="body-copy">Скачайте пассажирское приложение,<br class="desktop-break"> чтобы заказывать поездки по городу.</p>
+            <h2 id="passenger-title">Ваш маршрут.<br>Одно приложение.</h2>
+            <p class="body-copy">Пусть такси будет под рукой,<br class="desktop-break"> когда пора ехать.</p>
+            <ol class="app-steps"><li><span>1</span>Установите приложение</li><li><span>2</span>Укажите адреса поездки</li><li><span>3</span>Выберите тариф и закажите такси</li></ol>
           </div>
           <div class="app-download">
             <div class="app-identity"><span class="app-icon"><img src="assets/taxi-icon.svg" width="42" height="44" alt=""></span><div><h3>Астро-Волга Такси</h3><p>Приложение для пассажиров · Android</p></div></div>
@@ -127,23 +129,26 @@
 
     <section class="driver-section" id="drivers" aria-labelledby="driver-title">
       <div class="container driver-grid">
-        <div class="section-copy">
-          <p class="section-label">Водителям</p>
-          <h2 id="driver-title">Присоединяйтесь<br>к Астро-Волга Такси.</h2>
-          <p class="body-copy">Обсудите подключение с командой службы.<br class="desktop-break"> Условия работы и требования уточняйте при обращении.</p>
-        </div>
-        <div class="driver-actions">
-          <p class="contact-label">Подключение водителей</p>
-          <button class="driver-phone" type="button" data-action="call" data-channel="driver" data-position="drivers" data-driver-phone>+7 (000) 000-00-01</button>
-          <button class="button button-dark" type="button" data-action="driver" data-position="drivers"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Приложение для водителя</button>
-          <a class="inline-link" data-driver-email hidden></a>
+        <figure class="driver-visual"><img src="assets/taxi-driver.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Иллюстрация: водитель со смартфоном рядом с автомобилем"><figcaption>Иллюстративное изображение</figcaption></figure>
+        <div class="driver-content">
+          <div class="section-copy">
+            <p class="section-label">Водителям</p>
+            <h2 id="driver-title">Ваш следующий<br>маршрут — с нами.</h2>
+            <p class="body-copy">Присоединяйтесь к Астро-Волга Такси. Обсудите с командой условия работы, требования и порядок подключения.</p>
+          </div>
+          <div class="driver-actions">
+            <p class="contact-label">Подключение водителей</p>
+            <button class="driver-phone" type="button" data-action="call" data-channel="driver" data-position="drivers" data-driver-phone>+7 (000) 000-00-01</button>
+            <button class="button button-primary" type="button" data-action="driver" data-position="drivers"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Приложение для водителя</button>
+            <a class="inline-link" data-driver-email hidden></a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section faq-section" id="faq" aria-labelledby="faq-title">
       <div class="container faq-grid">
-        <h2 id="faq-title">Частые вопросы</h2>
+        <div class="faq-copy"><p class="section-label">Перед поездкой</p><h2 id="faq-title">Частые вопросы</h2><p class="body-copy">Самое важное о поездках<br>и подключении к службе.</p></div>
         <div class="faq-list">
           <details><summary>Как заказать такси?<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Позвоните в службу по номеру на сайте или воспользуйтесь пассажирским приложением.</p></div></details>
           <details><summary>Где работает служба?<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Астро-Волга Такси — служба для поездок по Луганску. Возможность поездки за пределы города уточняйте при заказе.</p></div></details>
@@ -152,6 +157,9 @@
           <details><summary>Как подключиться водителю?<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Позвоните по номеру для водителей в разделе «Водителям». Команда службы расскажет об условиях, требованиях и порядке подключения.</p></div></details>
         </div>
       </div>
+    </section>
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="container closing-panel"><div class="closing-copy"><p class="section-label">Рядом с вашими планами</p><h2 id="closing-title">Город ждёт.<br>Поехали с нами.</h2><p>Закажите такси для поездки по Луганску.</p><button class="button button-primary" type="button" data-action="call" data-position="closing">Позвонить в службу<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div>
     </section>
   </main>
 
