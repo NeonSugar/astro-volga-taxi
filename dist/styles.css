@@ -1,7 +1,7 @@
 @font-face{font-family:OpenSans;src:url("assets/OpenSans-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:OpenSans;src:url("assets/OpenSans-SemiBold.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
 @font-face{font-family:OpenSans;src:url("assets/OpenSans-Bold.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}
-:root{--ink:#102c3e;--muted:#526573;--blue:#1f6bb2;--red:#c42a3b;--red-hover:#a91e30;--line:#dce5ec;--surface:#f2f6f9;--container:1236px;}
+:root{--ink:#002035;--muted:#526573;--blue:#1f6bb2;--red:#c42a3b;--red-hover:#a91e30;--line:#dce5ec;--surface:#f2f6f9;--container:1236px;--light:#f2f6f9;}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
@@ -37,9 +37,10 @@ h1,h2,h3,p,figure{margin:0}
 .button-dark{background:var(--ink);color:#fff}
 .button-dark:hover{background:#244a69}
 
-.hero{position:relative;isolation:isolate;overflow:hidden;max-width:1440px;margin-inline:auto;padding:38px 0 42px;background:#f5f9fc}
-.hero-scene{position:absolute;inset:0 0 0 31%;z-index:-2}
-.hero-scene img{width:100%;height:100%;object-fit:cover;object-position:68% center}
+.hero{position:relative;isolation:isolate;overflow:hidden;max-width:1440px;margin-inline:auto;padding:38px 0 42px;}
+.hero-title{}
+.hero-scene{position:absolute;inset:0 0 0 15%;z-index:-2}
+.hero-scene img{width:100%;height:100%;object-fit:cover;object-position:68% center; border-radius: 0 0 26px 0;}
 .hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#fff 0%,#fff 29%,#fffffff0 35%,#ffffff99 42%,#ffffff00 53%);pointer-events:none}
 .hero:after{content:'';position:absolute;bottom:22px;right:28px;width:68px;aspect-ratio:162/138;z-index:-1;background:url("assets/pixel-cluster.svg") center/contain no-repeat;opacity:.6;pointer-events:none}
 .hero-grid{min-height:475px;display:flex;align-items:center}
@@ -48,11 +49,13 @@ h1,h2,h3,p,figure{margin:0}
 h1{font-size:clamp(64px,6.1vw,86px);font-weight:700;line-height:1.03;letter-spacing:-3.9px;color:#0b2837}
 h1>span{font-size:.78em;color:var(--blue);letter-spacing:-2.6px}
 .lead{font-size:16px;line-height:1.75;color:#405461;margin-top:22px}
-.hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:11px;width:320px;max-width:100%;margin-top:28px}
-.hero-actions .button{font-size:14px;min-height:51px}
-.hero-actions .button-primary{font-size:17px;letter-spacing:-.2px}
-.hero-actions .button-secondary{background:#ffffffeb}
-.hero-actions .icon{width:18px;height:18px}
+.hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:7px;width:320px;max-width:100%;margin-top:28px}
+.hero-actions .button{font-size:16px;min-height:56px}
+.hero-actions .icon{width:20px;height:20px}
+.hero-call{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 8px;color:var(--muted);font-size:12px;line-height:1.5}
+.hero-call button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0;background:transparent;color:#3e586c;font-size:14px;font-weight:600;white-space:nowrap}
+.hero-call button:hover{color:var(--blue)}
+.hero-call .icon{width:15px;height:15px}
 
 .section{padding-block:64px}
 h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
@@ -152,7 +155,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .driver-content .body-copy{max-width:430px}
 .driver-section .section-label{color:#ad2435}
 .driver-actions{display:flex;flex-direction:column;align-items:flex-start;margin-top:26px;padding-top:21px;border-top:1px solid var(--line)}
-.contact-label{font-size:12px;line-height:1.6;color:var(--muted);margin-bottom:7px}
+.contact-label{font-size:12px;line-height:1.6;color:var(--light);margin-bottom:7px}
 .driver-phone{display:block;padding:0;background:transparent;color:var(--ink);font-size:27px;font-weight:600;line-height:1.5;letter-spacing:-.7px;white-space:nowrap}
 .driver-phone:hover{color:var(--blue)}
 .driver-actions>.button{margin-top:19px;font-size:13px}
@@ -161,7 +164,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .inline-link .icon{width:15px;height:15px}
 .inline-link:hover{text-decoration:underline;text-underline-offset:4px}
 
-.faq-section{background:#fff;padding:0 0 54px}
+.faq-section{background:#eaf2fa;padding:1rem;margin-bottom: 62px;}
 .faq-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:74px;align-items:start}
 .faq-copy h2{font-size:34px}
 .faq-copy .body-copy{font-size:14px;margin-top:13px}
@@ -183,14 +186,14 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .closing-copy h2{font-size:34px;letter-spacing:-1.2px}
 .closing-copy>p:not(.section-label){font-size:13px;color:#3e586c;margin-top:12px}
 .closing-copy .button{margin-top:21px;font-size:13px}
-.site-footer{padding:34px 0 24px;background:#fff;border-top:1px solid #e8eef3}
+.site-footer{padding:34px 0 24px;background:var(--ink);border-top:1px solid #e8eef3}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:46px;padding-bottom:39px}
 .site-footer .brand-logo{width:176px}
-.footer-city{font-size:14px;color:var(--muted);margin-top:16px}
-.footer-phone{display:block;background:transparent;padding:0;min-height:36px;line-height:1.5;font-size:21px;font-weight:600;letter-spacing:-.5px;color:var(--ink);white-space:nowrap}
+.footer-city{font-size:14px;color:var(--light);margin-top:16px}
+.footer-phone{display:block;background:transparent;padding:0;min-height:36px;line-height:1.5;font-size:21px;font-weight:600;letter-spacing:-.5px;color:var(--light);white-space:nowrap}
 .footer-phone:hover{color:var(--blue)}
 .footer-contact>.inline-link{margin-top:9px}
-.site-footer .inline-link,.site-footer .footer-phone:hover{color:#19588e}
+.site-footer .inline-link,.site-footer .footer-phone:hover{color:var(--red)}
 .messenger-links{display:flex;gap:17px;margin-top:10px}
 .messenger-links:empty{display:none}
 .messenger-links>a{font-size:13px;color:#19588e}
@@ -300,8 +303,6 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   h1>span{font-size:.76em;letter-spacing:-1.8px}
   .lead{font-size:15px;margin-top:17px}
   .hero-actions{width:320px;margin-top:23px}
-  .hero-actions .button{font-size:14px;min-height:50px}
-  .hero-actions .button-primary{font-size:17px}
   h2{font-size:30px;line-height:1.22;letter-spacing:-1px}
   .section-label{font-size:10px;margin-bottom:12px}
   .body-copy{font-size:14px;margin-top:16px}
