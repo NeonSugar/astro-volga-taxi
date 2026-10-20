@@ -1,6 +1,7 @@
 /* Fill in approved content before launch. Empty links keep calls/downloads in demo mode. */
 window.ASTRO_CONFIG = {
-  siteUrl: 'https://astro-volga-taxi-lugansk.zzxxim.chatgpt.site/',
+  // Empty value uses the current address, including the LAN address during local preview.
+  siteUrl: '',
   phoneDisplay: '+7 (000) 000-00-00',
   phone: '',
   address: 'ул. Примерная, д. 00',
