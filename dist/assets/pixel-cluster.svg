@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 138" fill="none">
+  <g fill="#1F6BB2">
+    <path d="M72 0h18v18H72zM24 24h18v18H24zM48 24h18v18H48zM0 48h18v18H0zM24 48h18v18H24zM0 72h18v18H0zM48 72h18v18H48zM24 96h18v18H24z"/>
+  </g>
+  <g fill="#C42A3B">
+    <path d="M96 24h18v18H96zM96 48h18v18H96zM120 48h18v18h-18zM120 72h18v18h-18zM144 72h18v18h-18zM96 96h18v18H96zM120 96h18v18h-18zM72 120h18v18H72zM96 120h18v18H96z"/>
+  </g>
+</svg>
