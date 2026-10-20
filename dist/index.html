@@ -9,13 +9,14 @@
   <meta property="og:title" content="Астро-Волга Такси — такси в Луганске">
   <meta property="og:description" content="Закажите поездку по телефону или в приложении.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/taxi-daylight.webp">
+  <meta property="og:image" content="assets/taxi-app-hero.webp">
   <title>Астро-Волга Такси — такси в Луганске</title>
   <link rel="icon" type="image/svg+xml" href="assets/taxi-icon.svg">
   <link rel="preload" href="assets/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/taxi-daylight.webp">
-  <link rel="stylesheet" href="styles.css?v=hero-app-1">
+  <link rel="preload" href="assets/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/taxi-app-hero.webp">
+  <link rel="stylesheet" href="styles.css?v=hero-reference-2">
   <script src="config.js?v=clean-2" defer></script>
   <script src="script.js?v=city-1" defer></script>
 </head>
@@ -28,6 +29,8 @@
     <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 9 2-5h10l2 5M4 9h16v9H4zM7 18v3m10-3v3M4 12H2m20 0h-2M7 13h1m8 0h1"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-app" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
+    <symbol id="i-android" viewBox="0 0 24 24"><path d="m7 4-2-3m12 3 2-3M5 10a7 7 0 0 1 14 0Zm0 2h14v7H5zM8 19v3m8-3v3M2 12v6m20-6v6"/><path d="M9 7h.01M15 7h.01" stroke-width="2.5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><rect x="3" y="5" width="12" height="16" rx="3"/><path d="M7 5V3h10a3 3 0 0 1 3 3v12h-5M7 10h4m-4 4h4"/></symbol>
   </svg>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
@@ -42,21 +45,30 @@
         <a href="#drivers">Водителям</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <button class="header-phone" type="button" data-action="call" data-position="header" aria-label="Позвонить в службу такси"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-phone>+7 (000) 000-00-00</span></button>
+      <button class="header-download" type="button" data-action="passenger" data-position="header"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Скачать приложение</button>
       <a class="mobile-driver-link" href="#drivers">Водителям</a>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <figure class="hero-scene" aria-hidden="true"><img src="assets/1162e9babfae2de33ce6f2ff0c89ade9_c98ef09a_71c7_43f6_97c2_6ee8dd6b3873.png" width="1536" height="1024" alt="" fetchpriority="high" decoding="async"></figure>
+      <figure class="hero-scene" aria-hidden="true"><img src="assets/taxi-app-hero.webp" width="2560" height="1440" alt="" fetchpriority="high" decoding="async"></figure>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker">Астро-Волга Такси · Луганск</p>
-          <h1 id="hero-title">АСТРО-ВОЛГА<br><span>ТАКСИ</span></h1>
-          <p class="lead">Скачайте приложение.<br>Заказывайте такси со смартфона.</p>
+          <p class="hero-kicker">Твой город — твоё такси</p>
+          <h1 class="hero-title" id="hero-title"><span class="hero-title-name">АСТРО-ВОЛГА</span><span class="hero-title-service">ТАКСИ</span></h1>
+          <p class="lead"><strong>Всё в твоём телефоне.</strong><span>Выбери маршрут и закажи поездку.</span></p>
+          <ul class="hero-features" aria-label="Как заказать поездку">
+            <li><span class="hero-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>Укажи<br>маршрут</li>
+            <li><span class="hero-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg></span>Выбери<br>тариф</li>
+            <li><span class="hero-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span>Закажи<br>в приложении</li>
+            <li><span class="hero-feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>Свяжись<br>со службой</li>
+          </ul>
           <div class="hero-actions">
-            <button class="button button-primary" type="button" data-action="passenger" data-position="hero"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Скачать приложение</button>
+            <div class="hero-downloads">
+              <button class="app-badge" type="button" data-action="passenger" data-platform="apk" data-position="hero" aria-label="Скачать приложение для Android"><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg><span>Скачать для<strong>Android</strong></span></button>
+              <button class="app-badge" type="button" data-action="passenger" data-platform="rustore" data-position="hero" aria-label="Открыть приложение в RuStore"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span>Открыть в<strong>RuStore</strong></span></button>
+            </div>
             <div class="hero-call"><span>Или позвоните</span><button type="button" data-action="call" data-position="hero" aria-label="Вызвать такси по телефону"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-phone>+7 (000) 000-00-00</span></button></div>
           </div>
         </div>
