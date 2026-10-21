@@ -16,9 +16,9 @@
   <link rel="preload" href="assets/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/taxi-app-hero.webp">
-  <link rel="stylesheet" href="styles.css?v=hero-reference-2">
-  <script src="config.js?v=clean-2" defer></script>
-  <script src="script.js?v=city-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=tariff-reference-2">
+  <script src="config.js?v=tariff-reference-1" defer></script>
+  <script src="script.js?v=tariff-reference-1" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -89,12 +89,24 @@
 
     <section class="section tariff-section" id="tariffs" aria-labelledby="tariffs-title" hidden>
       <div class="container">
-        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title">Выберите свою поездку</h2></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><br>Пример наполнения, не действующие тарифы службы.</p></div>
+        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title">Выбирайте<br>подходящий тариф</h2><p class="tariff-intro">Для повседневных поездок, встреч и особых планов.</p></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><br>Пример наполнения, не действующие тарифы службы.</p></div>
         <div class="tariff-grid" data-tariff-list></div>
         <p class="image-note">Автомобили на изображениях — иллюстрации классов. Модель при заказе может отличаться.</p>
       </div>
     </section>
-    <template id="tariff-template"><article class="tariff-card"><figure class="tariff-visual"><img data-tariff-image width="640" height="420" loading="lazy" decoding="async" alt=""></figure><div class="tariff-content"><h3></h3><p class="tariff-description"></p><dl><div><dt>Посадка</dt><dd data-price="boarding"></dd></div><div><dt>За километр</dt><dd data-price="perKm"></dd></div><div><dt>За минуту</dt><dd data-price="perMinute"></dd></div></dl><p class="tariff-note"></p><button class="button button-secondary" type="button" data-action="call" data-position="tariffs">Заказать такси<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></article></template>
+    <template id="tariff-template">
+      <article class="tariff-card">
+        <span class="tariff-badge" hidden></span>
+        <figure class="tariff-visual"><img data-tariff-image width="640" height="420" loading="lazy" decoding="async" alt=""></figure>
+        <div class="tariff-content">
+          <h3></h3><p class="tariff-description"></p>
+          <dl><div><dt>Посадка</dt><dd data-price="boarding"></dd></div><div><dt>За километр</dt><dd data-price="perKm"></dd></div><div><dt>За минуту</dt><dd data-price="perMinute"></dd></div></dl>
+          <ul class="tariff-features" hidden></ul>
+          <p class="tariff-note"></p>
+          <button class="button tariff-order" type="button" data-action="call" data-position="tariffs">Заказать</button>
+        </div>
+      </article>
+    </template>
 
     <section class="section passenger-section" id="passengers" aria-labelledby="passenger-title">
       <div class="container app-grid">

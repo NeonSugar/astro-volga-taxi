@@ -16,12 +16,13 @@ window.ASTRO_CONFIG = {
   officeMapUrl: '',
   companyDetails: '',
   // Demo prices for the local prototype. Replace with approved tariffs before launch.
-  // Up to three tariffs: {name, description, boarding, perKm, perMinute, note}.
+  // Up to three tariffs: {name, description, boarding, perKm, perMinute, features, featured, badge, note}.
+  // features: up to three strings; featured: highlighted card; badge: optional short label.
   // A tariff is shown only when all three prices are finite nonnegative numbers.
   tariffs: [
-    { name: 'Економ', description: 'Для повседневных поездок по делам и по городу.', boarding: 150, perKm: 18, perMinute: 4 },
-    { name: 'Комфорт', description: 'Больше пространства для спокойной поездки.', boarding: 220, perKm: 25, perMinute: 6 },
-    { name: 'Люкс', description: 'Автомобиль бизнес-класса для особых планов.', boarding: 400, perKm: 40, perMinute: 10 },
+    { name: 'Економ', description: 'Для повседневных поездок по городу.', boarding: 150, perKm: 18, perMinute: 4, features: ['На каждый день', 'По городу и по делам', 'Заказ в приложении'] },
+    { name: 'Комфорт', description: 'Больше пространства и удобства в дороге.', boarding: 220, perKm: 25, perMinute: 6, features: ['Просторный салон', 'Для деловых встреч', 'Заказ в приложении'], featured: true, badge: 'Больше комфорта' },
+    { name: 'Люкс', description: 'Для особых событий и важных поездок.', boarding: 400, perKm: 40, perMinute: 10, features: ['Автомобиль бизнес-класса', 'Для особых случаев', 'Заказ в приложении'] },
   ],
   // Two or three real screenshots: {src: 'assets/screen-1.webp', alt: '...'}.
   screenshots: [],

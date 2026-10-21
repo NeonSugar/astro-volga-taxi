@@ -52,6 +52,18 @@
       image.alt = 'Иллюстрация автомобиля: ' + tariff.name;
       card.querySelector('h3').textContent = tariff.name;
       card.querySelector('.tariff-description').textContent = tariff.description || '';
+      if (tariff.featured === true) card.classList.add('tariff-card-featured');
+      const badge = card.querySelector('.tariff-badge');
+      if (typeof tariff.badge === 'string' && tariff.badge.trim()) {
+        badge.textContent = tariff.badge.trim(); badge.hidden = false;
+      }
+      const features = Array.isArray(tariff.features) ? tariff.features.filter(item => typeof item === 'string' && item.trim()).slice(0, 3) : [];
+      const featureList = card.querySelector('.tariff-features');
+      features.forEach(value => {
+        const item = document.createElement('li'); item.textContent = value.trim(); featureList.append(item);
+      });
+      featureList.hidden = features.length === 0;
+      card.querySelector('.tariff-order').setAttribute('aria-label', 'Заказать такси: ' + tariff.name);
       ['boarding', 'perKm', 'perMinute'].forEach(key => {
         card.querySelector('[data-price="' + key + '"]').textContent = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 2 }).format(tariff[key]) + ' ₽';
       });
