@@ -719,16 +719,24 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .footer-contact .inline-link{margin-top:2px;font-size:11px}
   .footer-bottom{padding-top:12px;gap:8px;font-size:10px}
 }
+/* Portrait hero: text overlays the artwork; download actions sit in a separate row. */
 @media(max-width:700px) and (orientation:portrait){
-  .hero-grid{padding-top:12px}
-  .hero-kicker{margin-bottom:8px}
-  .hero-title{font-size:clamp(38px,10.8vw,50px)}
-  .hero .lead{margin-top:8px}
-  .hero .lead strong{font-size:18px}
-  .hero-actions{margin-top:12px;gap:2px}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(clamp(280px,calc(100svh - 178px),520px),auto) auto;background:#f5f9fd}
+  .hero-grid,.hero-copy{display:contents}
+  .hero-scene{grid-area:1 / 1;position:relative;inset:auto;z-index:0;width:100%;max-width:none;height:100%;aspect-ratio:auto;margin:0;background:#eaf4ff url("assets/taxi-app-hero.webp?v=2") center top / auto 500% no-repeat}
+  .hero-scene img{top:auto;right:0;bottom:0;width:154%;height:auto;object-fit:fill;transform:none;mask-image:linear-gradient(180deg,transparent,#000 18%)}
+  .hero-scene:after{background:linear-gradient(180deg,#f5f9fdeb 0,#f5f9fdd9 140px,#f5f9fdb8 190px,#f5f9fd00 270px)}
+  .hero-kicker,.hero-title,.hero .lead{grid-area:1 / 1;position:relative;z-index:1;align-self:start;justify-self:start;margin-inline:20px}
+  .hero-kicker{margin-top:18px;margin-bottom:0;font-size:8px;letter-spacing:.12em}
+  .hero-title{margin-top:45px;font-size:clamp(38px,10.8vw,50px)}
+  .hero .lead{margin-top:calc(57px + clamp(38px,10.8vw,50px)*2.08)}
+  .hero .lead strong{font-size:18px;line-height:1.4}
+  .hero .lead>span{display:block;margin-top:2px;font-size:12px;line-height:1.5;color:#304e64}
+  .hero-actions{grid-area:2 / 1;position:relative;z-index:1;width:100%;max-width:480px;justify-self:stretch;margin:0 auto;padding:12px 20px 6px;gap:2px}
   .hero-downloads .app-badge{min-height:48px;padding-block:6px}
-  .hero-scene{width:min(100%,calc(clamp(160px,calc(100svh - 350px),250px)*1.36));max-width:480px;aspect-ratio:1.36}
+  .hero-call{justify-content:center}
 }
+
 @media(max-width:700px) and (max-height:600px){
   .tariff-visual{height:56px}
   .tariff-description{display:none}
