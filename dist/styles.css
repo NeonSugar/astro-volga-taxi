@@ -23,9 +23,11 @@ h1,h2,h3,p,figure{margin:0}
 .header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .brand{display:inline-flex;align-items:center;flex:none}
 .brand-logo{width:176px;height:auto}
-.main-nav{display:flex;align-items:center;gap:28px;margin-right:auto}
+.main-nav{position:relative;display:flex;align-items:center;gap:28px;margin-right:auto}
 .main-nav>a{font-size:13px;font-weight:600;padding-block:13px}
-.main-nav>a:hover{color:var(--blue)}
+.main-nav>a:hover,.main-nav>a[aria-current="location"]{color:var(--blue)}
+.nav-indicator{position:absolute;left:0;bottom:5px;width:var(--nav-width,0px);height:3px;border-radius:999px;background:var(--blue);transform:translateX(var(--nav-x,0px));opacity:0;pointer-events:none;transition:transform .32s cubic-bezier(.22,.68,.2,1),width .32s cubic-bezier(.22,.68,.2,1),opacity .2s}
+.main-nav[data-nav-ready] .nav-indicator{opacity:1}
 .header-download{display:flex;align-items:center;gap:9px;min-height:44px;padding:10px 20px;border-radius:999px;background:var(--blue);font-size:13px;font-weight:600;white-space:nowrap;color:#fff}
 .header-download .icon{width:18px;height:18px}
 .header-download:hover{background:#15578f}
@@ -96,8 +98,8 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .tariff-section .tariff-intro{margin-top:15px;font-size:16px;line-height:1.7;color:#3c5263}
 .tariff-disclaimer{max-width:245px;flex:none;padding-left:14px;border-left:2px solid #aacce6;font-size:12px;line-height:1.75}
 .tariff-disclaimer strong{font-weight:600;color:#344f62}
-.tariff-grid{display:grid;grid-template-columns:repeat(var(--tariff-columns,3),minmax(0,1fr));gap:28px}
-.tariff-card{position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid #e2ebf2;border-radius:18px;background:#fff;box-shadow:0 10px 28px #335a7610}
+.tariff-grid{display:grid;grid-template-columns:repeat(var(--tariff-columns,3),minmax(0,1fr));align-items:start;gap:28px}
+.tariff-card{position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid #e2ebf2;border-radius:18px;background:#fff;box-shadow:0 10px 28px #335a7610;transition:transform .38s cubic-bezier(.2,.75,.25,1),box-shadow .38s,border-color .38s}
 .tariff-card-featured{border-color:#8bb7d8;box-shadow:0 10px 28px #1f6bb21c}
 .tariff-badge{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);z-index:1;max-width:calc(100% - 24px);padding:6px 20px;border-radius:999px;background:var(--blue);box-shadow:0 4px 12px #1f6bb226;color:#fff;font-size:12px;font-weight:600;line-height:1.5;text-align:center;white-space:nowrap}
 .tariff-visual{height:170px;padding:18px 22px 0;overflow:hidden;border-radius:18px 18px 0 0;background:#fff}
@@ -112,25 +114,38 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .tariff-card dd{font-size:13px;font-weight:600;margin:0;white-space:nowrap;line-height:1.7}
 .tariff-card dl>div:first-child dt{order:1;font-size:12px}
 .tariff-card dl>div:first-child dd{font-size:32px;font-weight:700;line-height:1.25;color:#0b1c28;letter-spacing:-1px}
+.tariff-details{display:grid;grid-template-rows:1fr;opacity:1;transition:grid-template-rows .42s cubic-bezier(.2,.75,.25,1),opacity .25s ease}
+.tariff-details-inner{display:flex;flex-direction:column;min-height:0;overflow:hidden;transition:transform .38s cubic-bezier(.2,.75,.25,1)}
 .tariff-features{list-style:none;display:grid;gap:9px;margin:0 0 22px;padding:0}
 .tariff-features li{position:relative;padding-left:25px;font-size:13px;line-height:1.6;color:#314b5c}
 .tariff-features li:before{content:'';position:absolute;top:3px;left:0;width:17px;height:17px;border-radius:50%;background:var(--blue)}
 .tariff-features li:after{content:'';position:absolute;top:8px;left:5px;width:7px;height:4px;border-left:1.7px solid #fff;border-bottom:1.7px solid #fff;transform:rotate(-45deg)}
 .tariff-note{color:var(--muted);font-size:11px;line-height:1.7;margin-bottom:16px}
-.tariff-content>.tariff-order{width:100%;font-size:15px;margin-top:auto;min-height:48px;border-radius:11px;background:var(--blue);color:#fff}
-.tariff-content>.tariff-order:hover{background:#15578f}
+.tariff-card .tariff-order{width:100%;font-size:15px;margin-top:auto;min-height:48px;border-radius:11px;background:var(--blue);color:#fff}
+.tariff-card .tariff-order:hover{background:#15578f}
+.tariff-card .tariff-order:focus-visible{outline:2px solid #fff;outline-offset:-5px}
+@media(hover:hover) and (pointer:fine){
+  .tariff-card .tariff-details{grid-template-rows:0fr;opacity:0;pointer-events:none}
+  .tariff-card .tariff-details-inner{transform:translateY(7px)}
+  .tariff-card:hover,.tariff-card:focus-within{z-index:1;transform:translateY(-4px);border-color:#8bb7d8;box-shadow:0 18px 38px #1f6bb222}
+  .tariff-card:hover .tariff-details,.tariff-card:focus-within .tariff-details{grid-template-rows:1fr;opacity:1;pointer-events:auto}
+  .tariff-card:hover .tariff-details-inner,.tariff-card:focus-within .tariff-details-inner{transform:translateY(0)}
+}
 .image-note{font-size:11px;line-height:1.7;color:var(--muted);margin-top:17px}
 
 .passenger-section{background:#fff;padding-top:48px;padding-bottom:64px}
-.app-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:70px;padding:42px 46px;border:1px solid #e3edf5;border-radius:28px;background:linear-gradient(125deg,#f4f8fc,#edf4fa)}
-.app-content{min-width:0;order:-1}
-.app-art{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:25px;padding:30px 20px 20px;border-radius:23px;background:#f0f5f8 url("assets/route-map-light.svg") center/cover}
-.app-art:before{content:'';position:absolute;width:80px;aspect-ratio:162/138;top:28px;right:18px;background:url("assets/pixel-cluster.svg") center/contain no-repeat;opacity:.38;pointer-events:none;z-index:-1}
-.app-art figcaption{font-size:10px;line-height:1.7;color:#3e586c;text-align:center}
-.app-steps{list-style:none;margin:23px 0 0;padding:0;display:grid;gap:12px}
-.app-steps li{display:flex;align-items:center;gap:12px;font-size:13px;color:#334e62}
-.app-steps li>span{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#e5f0fa;color:#175a94;font-size:11px;font-weight:700;flex:none}
-.phone-mockup{width:246px;max-width:100%;padding:7px;background:#102b43;border:1px solid #536c82;border-radius:36px;box-shadow:0 22px 40px #163c6026;transform:rotate(4deg)}
+.app-grid{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,.7fr);align-items:center;gap:32px;min-height:550px;padding:42px 40px;border:1px solid #e5eef6;border-radius:28px;background:linear-gradient(110deg,#fff 35%,#f8fbff)}
+.app-grid:before{content:'';position:absolute;z-index:-1;inset:-18% -15% -35% 44%;border-radius:45% 0 0 30%;transform:rotate(15deg);background:linear-gradient(135deg,#e4f1ffbb,#edf6ff66 65%,#d8ebfc99);pointer-events:none}
+.app-content{min-width:0}
+.app-content .section-label{font-size:10px;letter-spacing:.1em}
+.app-content h2{font-size:46px;line-height:1.12;letter-spacing:-1.7px}
+.app-content .body-copy{font-size:15px;line-height:1.7;margin-top:18px}
+.app-points{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+.app-points li{display:flex;align-items:center;gap:9px;font-size:13px;line-height:1.6;color:#334e62}
+.app-points .icon{width:18px;height:18px;padding:3px;border-radius:50%;background:var(--blue);color:#fff;stroke-width:2.5}
+.app-art{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;min-width:0;padding:16px 0 0}
+.app-art figcaption{max-width:210px;font-size:9px;line-height:1.7;color:#526d82;text-align:center}
+.phone-mockup{width:236px;max-width:100%;padding:7px;background:linear-gradient(120deg,#71818e,#132431 12%,#071018 70%,#8293a1);border:1px solid #8897a3;border-radius:36px;box-shadow:0 24px 36px -10px #163c6047,5px 3px 0 #263746;transform:rotate(8deg)}
 .phone-screen{position:relative;overflow:hidden;border-radius:28px;background:#fff}
 .phone-camera{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:63px;height:16px;border-radius:10px;background:#102b43}
 .phone-status{height:35px;padding:11px 16px 6px;display:flex;align-items:center;justify-content:space-between;font-size:9px;font-weight:700;line-height:1}
@@ -149,18 +164,17 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .route-dot{width:6px;height:6px;flex:none;border-radius:50%;background:var(--red)}
 .route-dot-blue{background:var(--blue)}
 .app-address .icon{width:13px;height:13px;margin-left:auto}
-.app-route-button{display:block;margin-top:14px;padding:10px;border-radius:7px;background:var(--red);color:#fff;text-align:center;font-size:10px;font-weight:600;line-height:1.4}
-.app-download{border-top:1px solid var(--line);padding-top:24px;margin-top:26px}
-.app-identity{display:flex;align-items:center;gap:16px}
-.app-icon{display:grid;place-items:center;width:54px;height:54px;border:1px solid #dce6ef;border-radius:16px;background:#f1f6fb;flex:none}
-.app-icon img{width:35px;height:auto}
-.app-identity h3{font-size:16px;font-weight:600;line-height:1.4;letter-spacing:-.3px}
-.app-identity p{font-size:12px;color:var(--muted);line-height:1.7;margin-top:5px}
-.download-actions{margin-top:24px}
-.download-actions>.button{min-width:255px;font-size:14px}
-.store-link{display:flex;justify-content:flex-start;gap:9px;align-items:center;margin-top:18px;color:var(--blue);font-size:13px}
-.store-link .icon{width:16px;height:16px}
-.store-link:hover{text-decoration:underline}
+.app-route-button{display:block;margin-top:14px;padding:10px;border-radius:7px;background:var(--blue);color:#fff;text-align:center;font-size:10px;font-weight:600;line-height:1.4}
+.app-download{margin-top:25px}
+.passenger-downloads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:350px;max-width:100%}
+.app-perks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:24px;min-width:0}
+.app-perk{display:flex;align-items:center;gap:12px;padding:18px 16px;border:1px solid #edf3fa;border-radius:16px;background:#fffffff2;box-shadow:0 12px 26px -8px #1f6bb22b}
+.app-perk:nth-child(2){transform:translateX(12px)}
+.app-perk-icon{display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:12px;background:#eaf4ff;color:var(--blue)}
+.app-perk-icon .icon{width:25px;height:25px;stroke-width:2}
+.app-perk>div{min-width:0}
+.app-perk strong{display:block;font-size:13px;font-weight:600;line-height:1.45}
+.app-perk div>span{display:block;margin-top:3px;font-size:11px;line-height:1.5;color:var(--muted)}
 .qr-block{display:flex;align-items:center;gap:18px;margin-top:24px;padding-top:23px;border-top:1px solid var(--line)}
 .qr-code{width:108px;height:108px;flex:none}
 .qr-code>svg{display:block;width:100%;height:100%}
@@ -254,14 +268,26 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .tariff-grid{gap:22px}
   .tariff-visual{height:155px;padding-inline:18px}
   .tariff-content{padding:10px 22px 22px}
-  .app-grid{gap:40px;padding:35px}
-  .app-identity{gap:12px}
-  .app-identity h3{font-size:15px}
-  .app-identity p{font-size:11px}
+  .app-grid{gap:24px;padding:34px 30px}
+  .app-content h2{font-size:40px}
+  .app-content .body-copy{font-size:14px}
+  .app-points li{font-size:12px}
+  .phone-mockup{width:226px}
+  .app-perk{gap:9px;padding:16px 12px}
+  .app-perk-icon{width:34px;height:34px;border-radius:10px}
+  .app-perk-icon .icon{width:22px;height:22px}
+  .app-perk strong{font-size:12px}
   .driver-content{padding:35px 32px}
   .faq-grid{gap:50px}
   .footer-grid{gap:27px}
   .footer-phone{font-size:18px}
+}
+@media(max-width:1000px){
+  .app-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;padding:30px}
+  .app-grid:before{inset:-10% -30% -10% 45%}
+  .phone-mockup{width:222px}
+  .app-perks{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .app-perk:nth-child(2){transform:none}
 }
 @media(max-width:900px){
   .header-inner{height:76px}
@@ -309,15 +335,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .tariff-features li{font-size:12px;padding-left:23px}
   .tariff-badge{padding-inline:14px;font-size:11px}
   .passenger-section{padding-block:36px 50px}
-  .app-grid{gap:28px;padding:27px}
-  .app-art{padding-inline:20px}
-  .phone-mockup{width:222px}
   .body-copy{font-size:14px}
-  .app-icon{width:48px;height:48px;border-radius:12px}
-  .app-icon img{width:31px}
-  .app-identity{flex-wrap:wrap}
-  .app-identity h3{font-size:15px}
-  .download-actions>.button{min-width:0;width:100%;font-size:13px}
   .driver-content{padding:30px 25px}
   .driver-visual{min-height:470px}
   .driver-phone{font-size:23px}
@@ -386,18 +404,19 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .image-note{font-size:10px}
   .passenger-section{padding:25px 0 42px}
   .app-grid{display:flex;flex-direction:column;align-items:stretch;gap:27px;padding:27px 22px;border-radius:22px}
-  .app-content{order:-1}
-  .app-art{padding:35px 22px 20px;border-radius:20px;gap:25px}
-  .phone-mockup{width:236px}
-  .app-steps{gap:11px}
-  .app-download{margin-top:22px;padding-top:22px}
-  .app-identity{flex-wrap:nowrap;gap:13px}
-  .app-icon{width:54px;height:54px;border-radius:13px}
-  .app-icon img{width:35px}
-  .app-identity h3{font-size:16px}
-  .app-identity p{font-size:11px}
-  .download-actions{margin-top:21px}
-  .download-actions>.button{font-size:14px;min-height:50px}
+  .app-grid:before{inset:30% -45% -10% 12%;transform:rotate(10deg)}
+  .app-content h2{font-size:36px;letter-spacing:-1.2px}
+  .app-content .body-copy{font-size:14px;margin-top:14px}
+  .app-content .section-label{font-size:9px}
+  .app-points{margin-top:18px}
+  .app-points li{font-size:12px}
+  .app-art{padding:14px 0 0;gap:26px}
+  .phone-mockup{width:222px}
+  .app-download{margin-top:22px}
+  .app-perks{grid-template-columns:1fr;gap:12px}
+  .app-perk{padding:13px 16px;gap:13px}
+  .app-perk strong{font-size:13px}
+  .app-perk div>span{font-size:12px}
   .qr-block{display:none}
   .screenshots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:15px;padding-top:30px;padding-bottom:8px}
   .screenshot{flex:0 0 72%;scroll-snap-align:start;padding:13px}
@@ -450,11 +469,6 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .hero-downloads{gap:9px}
   .app-badge{padding-inline:9px;gap:8px}
   .app-badge strong{font-size:17px}
-  .app-identity{gap:10px}
-  .app-icon{width:46px;height:46px}
-  .app-icon img{width:30px}
-  .app-identity h3{font-size:14px}
-  .app-identity p{font-size:10px}
   .driver-content{padding:26px 21px}
   .driver-content h2{font-size:27px}
   .driver-phone{font-size:24px}

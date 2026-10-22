@@ -81,6 +81,7 @@
   if (storeUrl) {
     const link = document.querySelector('[data-rustore]');
     link.href = storeUrl; link.hidden = false; link.dataset.goal = 'passenger_app_click';
+    document.querySelector('[data-rustore-placeholder]').hidden = true;
   }
   if (appUrl) {
     const block = document.querySelector('[data-qr-block]');
@@ -163,7 +164,7 @@
       link.rel = 'noopener'; document.body.append(link); link.click(); link.remove();
     } else window.open(url, '_blank', 'noopener,noreferrer');
   }));
-  all('[data-goal]', link => link.addEventListener('click', () => track(link.dataset.goal, { position: 'contacts', platform: link.dataset.messenger || 'store' })));
+  all('[data-goal]', link => link.addEventListener('click', () => track(link.dataset.goal, { position: link.dataset.position || 'contacts', platform: link.dataset.messenger || 'store' })));
   all('.faq-list details', details => details.addEventListener('toggle', () => {
     if (details.open) all('.faq-list details', other => { if (other !== details) other.open = false; });
   }));
@@ -171,6 +172,58 @@
     const bar = document.querySelector('.mobile-action-bar');
     new IntersectionObserver(entries => { bar.hidden = entries[0].isIntersecting; }).observe(document.querySelector('.hero-actions'));
   }
+
+  const nav = document.querySelector('.main-nav');
+  const header = document.querySelector('.site-header');
+  const navSections = [...nav.querySelectorAll('a[href^="#"]')].map(link => ({
+    link, section: document.getElementById(link.getAttribute('href').slice(1)),
+  })).filter(item => item.section);
+  let currentNavLink = null;
+  let navFramePending = false;
+  let navNeedsMeasure = true;
+  const updateNav = () => {
+    navFramePending = false;
+    const visibleSections = navSections.filter(item => !item.link.hidden && !item.section.hidden);
+    if (!visibleSections.length) return;
+    const activationLine = header.getBoundingClientRect().bottom + Math.min(window.innerHeight * .2, 120);
+    let active = visibleSections[0];
+    visibleSections.forEach(item => {
+      if (item.section.getBoundingClientRect().top <= activationLine) active = item;
+    });
+    const last = visibleSections[visibleSections.length - 1];
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (atBottom && last.section.getBoundingClientRect().top < window.innerHeight) active = last;
+    if (currentNavLink !== active.link) {
+      navSections.forEach(item => item.link.removeAttribute('aria-current'));
+      active.link.setAttribute('aria-current', 'location');
+      currentNavLink = active.link;
+      navNeedsMeasure = true;
+    }
+    if (navNeedsMeasure && nav.offsetWidth) {
+      const navBounds = nav.getBoundingClientRect();
+      const linkBounds = active.link.getBoundingClientRect();
+      nav.style.setProperty('--nav-x', (linkBounds.left - navBounds.left) + 'px');
+      nav.style.setProperty('--nav-width', linkBounds.width + 'px');
+      nav.setAttribute('data-nav-ready', '');
+      navNeedsMeasure = false;
+    }
+  };
+  const scheduleNav = () => {
+    if (navFramePending) return;
+    navFramePending = true;
+    window.requestAnimationFrame(updateNav);
+  };
+  const measureNav = () => { navNeedsMeasure = true; scheduleNav(); };
+  window.addEventListener('scroll', scheduleNav, { passive: true });
+  window.addEventListener('resize', measureNav, { passive: true });
+  window.addEventListener('hashchange', scheduleNav);
+  if ('ResizeObserver' in window) {
+    const navObserver = new window.ResizeObserver(measureNav);
+    [nav, document.querySelector('main'), document.querySelector('.site-footer')].forEach(element => navObserver.observe(element));
+  }
+  if (document.fonts) document.fonts.ready.then(measureNav);
+  scheduleNav();
+
   const siteUrl = safeUrl(config.siteUrl) || location.href.split('#')[0];
   const provider = { '@type': 'Organization', name: 'Астро-Волга Такси', url: siteUrl };
   if (phoneNumber(config.phone)) provider.telephone = phoneNumber(config.phone);
