@@ -1,10 +1,32 @@
 # Креативы Астро-Волга Такси
 
+## Водительский блок по референсу от 22 октября 2026 года
+
+Встроенным ImageGen создана отдельная фотографическая иллюстрация водителя в белом автомобиле. Исходник сохранён в `dist/assets/taxi-driver-window.png` (1254 × 1254). Версия сайта — `dist/assets/taxi-driver-window.webp` (1024 × 1024, 96 836 байт). Прежнее фото `taxi-driver.webp` сохранено, но больше не загружается страницей. Человек не представлен реальным сотрудником службы; логотип, тексты и кнопки выполнены отдельно в HTML/SVG/CSS.
+
+Финальный промпт:
+
+Use case: photorealistic-natural. Asset type: square photographic visual for the driver recruitment section of the Russian taxi service Астро-Волга. Create one premium realistic commercial lifestyle photograph, not a webpage. A friendly adult male taxi driver around 32, short neat brown hair and light beard, sits in the driver's seat of a modern white left-hand-drive car. Viewed from outside through the open driver's side window, he looks toward the camera with a relaxed natural smile and raises his near hand with one clear thumbs-up gesture. Plain dark navy polo shirt, NO logos or writing. Natural anatomy and fingers. Show his entire head, upper torso, raised thumb and arm comfortably inside the image. The open window, dark interior, black window trim and curved white car door surround him; his face is near the upper center and the raised hand near the lower center. A clean pale cool white and very light blue environment, soft flattering daylight, natural skin texture, believable car reflections, approachable professional mood. Square 1:1 composition, face and hand kept well away from all edges so it can also crop slightly wider on mobile. No phone, no other people, no taxi roof sign, no letters, no text, no watermarks, no badges, no invented brand mark. Opaque photographic background, no transparency.
+
+## Обновление hero и логотипа от 22 октября 2026 года
+
+Главное изображение заменено на новый файл заказчика с обновлённым оформлением автомобиля и экрана телефона. Оригинал сохранён без изменений в `dist/assets/taxi-app-hero.png` (5504 × 3072). Для страницы подготовлена WebP-версия `dist/assets/taxi-app-hero.webp` (2560 × 1429, 316 816 байт). Выполнены только уменьшение и сжатие; новая генерация не выполнялась. Тексты и кнопки hero сохранены отдельно в HTML. Интерфейс растрового телефона остаётся иллюстрацией.
+
+Логотип заменён на предоставленный заказчиком файл «Такси_астроволга_лого_горезонтальное.svg», скопированный без изменений в `dist/assets/taxi-logo.svg`. Он используется в шапке, подвале и декоративном телефоне FAQ; пропорции сохранены. Круглая иконка не менялась.
+
+## FAQ по референсу заказчика
+
+Встроенным ImageGen создан объёмный синий знак вопроса с белым облачком сообщения. Исходник с прозрачностью: `dist/assets/faq-question.png` (1254 × 1254). Для сайта подготовлен `dist/assets/faq-question.webp` (900 × 900, 65 614 байт); прозрачность сохранена. Телефон, логотип, его экран и все интерактивные карточки выполнены отдельно в HTML/CSS/SVG. Экран подписан как иллюстрация интерфейса, а не реальный скриншот приложения.
+
+Финальный промпт:
+
+Use case: stylized-concept. Asset type: transparent 3D decorative illustration for the FAQ section of a modern Russian taxi service website. Create one large upright three-dimensional question mark in rich corporate blue (#1F6BB2), with a brighter blue front face and darker blue extruded side, a separate round dot below. Beside its lower right is a small white rounded speech bubble with exactly three blue dots. Premium polished 3D product render, gently rounded edges, soft studio lighting, subtle realistic contact shadow, slight three-quarter perspective, clean and friendly. Square composition, full objects visible with generous transparent padding; the question mark is the dominant object. Genuinely transparent background with alpha, no rectangular backdrop or colored floor. No phone, no people, no logos, no letters, no text, no other objects.
+
 ## Оформление тарифов по новому референсу
 
 Использованы существующие изображения `tariff-economy.webp`, `tariff-comfort.webp` и `tariff-lux.webp`, без изменения исходных файлов. Белый фон и масштаб подачи настроены через CSS. Декоративные голубые ленты выполнены кодом в `dist/assets/tariff-ribbons.svg`; новая генерация растровых изображений не выполнялась.
 
-## Первый экран с автомобилем и телефоном по последнему референсу
+## Предыдущий первый экран с автомобилем и телефоном
 
 Использовано уже находившееся в проекте изображение заказчика `dist/assets/1162e9babfae2de33ce6f2ff0c89ade9_c98ef09a_71c7_43f6_97c2_6ee8dd6b3873.png` (3840 × 2160). Оно совпадает с фоном нового референса: автомобиль, телефон, городская сцена и голубые диагонали. Новая генерация не выполнялась, исходный PNG сохранён без изменений.
 

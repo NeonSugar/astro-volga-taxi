@@ -71,6 +71,14 @@ h1,h2,h3,p,figure{margin:0}
 .hero-call button:hover{color:var(--blue)}
 .hero-call .icon{width:15px;height:15px}
 
+@media(min-width:901px){
+  .hero-kicker{font-size:clamp(12px,1vw,14px)}
+  .hero-title{font-size:clamp(68px,7.23vw,104px)}
+  .hero .lead{margin-top:clamp(36px,4.17vw,60px)}
+  .hero-actions{gap:10px}
+  .hero-downloads .app-badge{min-height:62px}
+}
+
 .section{padding-block:64px}
 h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .section-label{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;color:var(--blue);line-height:1.5;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
@@ -91,7 +99,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .trust-card h3{font-size:13px;font-weight:600;line-height:1.5;letter-spacing:-.2px}
 .trust-card p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
 
-.tariff-section{position:relative;isolation:isolate;overflow:hidden;max-width:1440px;margin-inline:auto;padding:46px 0 36px;background:linear-gradient(180deg,#f6fbff,#eaf5fd 64%,#fff)}
+.tariff-section{position:relative;isolation:isolate;overflow:hidden;max-width:1440px;margin:48px auto 0;padding:56px 0 36px;border-top:1px solid #e1ebf3;border-radius:28px 28px 0 0;background:linear-gradient(180deg,#f6fbff,#eaf5fd 64%,#fff)}
 .tariff-section:before{content:'';position:absolute;top:-80px;right:-80px;z-index:-1;width:680px;height:600px;background:url("assets/tariff-ribbons.svg") right top/contain no-repeat;pointer-events:none}
 .tariff-section>.container{position:relative}
 .tariff-section .section-heading{align-items:end;margin-bottom:42px;gap:40px}
@@ -135,8 +143,9 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .image-note{font-size:11px;line-height:1.7;color:var(--muted);margin-top:17px}
 
 .passenger-section{background:#fff;padding-top:48px;padding-bottom:64px}
-.app-grid{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,.7fr);align-items:center;gap:32px;min-height:550px;padding:42px 40px;border:1px solid #e5eef6;border-radius:28px;background:linear-gradient(110deg,#fff 35%,#f8fbff)}
+.app-grid{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,.7fr);align-items:center;gap:32px;min-height:550px;padding:42px 40px;border:1px solid #e5eef6;border-radius:28px;background:linear-gradient(0deg,#fff,transparent 150px),linear-gradient(110deg,#f6fbff 35%,#f1f7ff)}
 .app-grid:before{content:'';position:absolute;z-index:-1;inset:-18% -15% -35% 44%;border-radius:45% 0 0 30%;transform:rotate(15deg);background:linear-gradient(135deg,#e4f1ffbb,#edf6ff66 65%,#d8ebfc99);pointer-events:none}
+.app-grid:after{content:'';position:absolute;inset:auto 0 0;z-index:-1;height:60px;background:linear-gradient(transparent,#fff);pointer-events:none}
 .app-content{min-width:0}
 .app-content .section-label{font-size:10px;letter-spacing:.1em}
 .app-content h2{font-size:46px;line-height:1.12;letter-spacing:-1.7px}
@@ -187,45 +196,94 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 
 
 .driver-section{padding:0 0 62px;background:#fff}
-.driver-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:stretch;gap:0;width:min(calc(100% - 32px),1236px);overflow:hidden;border:1px solid #e7eef3;border-radius:25px;background:linear-gradient(120deg,#f0f5f9,#f8fafb)}
-.driver-visual{position:relative;overflow:hidden;min-height:475px;background:#dce6ed}
+.driver-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:stretch;gap:0;width:min(calc(100% - 32px),1440px);overflow:hidden;border-radius:28px;background:linear-gradient(0deg,#fff,transparent 150px),linear-gradient(110deg,#f7fbff,#f2f8fd)}
+.driver-visual{position:relative;overflow:hidden;min-height:650px;border-radius:150px 0 0 0;background:#e7f0f6}
+.driver-visual:after{content:'';position:absolute;inset:auto 0 0;height:100px;background:linear-gradient(transparent,#fff);pointer-events:none}
 .driver-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
-.driver-visual figcaption{position:absolute;bottom:14px;left:16px;background:#ffffffde;color:#334e62;padding:5px 9px;border-radius:5px;font-size:11px;line-height:1.6}
-.driver-content{min-width:0;padding:44px 42px}
-.driver-content .body-copy{max-width:430px}
-.driver-section .section-label{color:#ad2435}
-.driver-actions{display:flex;flex-direction:column;align-items:flex-start;margin-top:26px;padding-top:21px;border-top:1px solid var(--line)}
-.contact-label{font-size:12px;line-height:1.6;color:var(--light);margin-bottom:7px}
-.driver-phone{display:block;padding:0;background:transparent;color:var(--ink);font-size:27px;font-weight:600;line-height:1.5;letter-spacing:-.7px;white-space:nowrap}
+.driver-visual figcaption{position:absolute;bottom:16px;right:18px;z-index:1;background:#ffffffe0;color:#334e62;padding:5px 9px;border-radius:6px;font-size:10px;line-height:1.6}
+.driver-content{min-width:0;padding:52px clamp(32px,4.4vw,64px)}
+.driver-content h2{font-size:58px;line-height:1.1;letter-spacing:-2px}
+.driver-content .body-copy{max-width:440px;margin-top:16px;font-size:23px;line-height:1.45;color:#38566c}
+.driver-benefits{display:grid;gap:20px;list-style:none;margin:28px 0 0;padding:0}
+.driver-benefits li{display:flex;align-items:center;gap:17px;min-width:0}
+.driver-benefit-icon{display:grid;place-items:center;width:56px;height:56px;flex:none;border-radius:16px;background:#e1effd;color:var(--blue)}
+.driver-benefit-icon .icon{width:29px;height:29px;stroke-width:2}
+.driver-benefits strong{display:block;font-size:18px;line-height:1.4;letter-spacing:-.3px}
+.driver-benefits div>span{display:block;margin-top:3px;font-size:15px;line-height:1.5;color:#6c8192}
+.driver-actions{display:flex;flex-direction:column;align-items:flex-start;margin-top:30px}
+.driver-actions>.driver-join{justify-content:space-between;gap:30px;min-width:350px;min-height:64px;padding:16px 28px;margin:0;background:var(--blue);color:#fff;font-size:20px}
+.driver-join:hover{background:#15578f}
+.driver-join .icon{width:26px;height:26px}
+.driver-app-note{margin-top:8px;font-size:11px;line-height:1.5;color:#6c8192}
+.driver-contact{display:flex;align-items:center;flex-wrap:wrap;gap:0 10px;margin-top:12px;font-size:11px;color:#6c8192}
+.driver-phone{display:block;min-height:44px;padding:0;background:transparent;color:#3e586c;font-size:14px;font-weight:600;line-height:1.5;white-space:nowrap}
 .driver-phone:hover{color:var(--blue)}
-.driver-actions>.button{margin-top:19px;font-size:13px}
 .driver-actions>.inline-link{margin-top:14px}
+.contact-label{font-size:12px;line-height:1.6;color:var(--light);margin-bottom:7px}
 .inline-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--blue);line-height:1.7}
 .inline-link .icon{width:15px;height:15px}
 .inline-link:hover{text-decoration:underline;text-underline-offset:4px}
 
-.faq-section{background:#eaf2fa;padding:1rem;margin-bottom: 62px;}
-.faq-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:74px;align-items:start}
-.faq-copy h2{font-size:34px}
-.faq-copy .body-copy{font-size:14px;margin-top:13px}
-.faq-list{display:grid;gap:8px}
-.faq-list details{border:1px solid #dfe7ed;border-radius:11px;background:#fafcfd;padding-inline:17px}
-.faq-list summary{list-style:none;cursor:pointer;padding-block:15px;display:flex;align-items:center;justify-content:space-between;gap:24px;line-height:1.5;font-size:13px;font-weight:600}
+.faq-section{position:relative;isolation:isolate;overflow:hidden;overflow:clip;max-width:1440px;margin:0 auto 62px;padding:64px 0;border-radius:28px;background:linear-gradient(0deg,#fff,transparent 150px),linear-gradient(125deg,#f2f8ff,#eaf4ff 60%,#f5f9ff)}
+.faq-section:before,.faq-section:after{content:'';position:absolute;z-index:-1;width:230px;height:230px;background:linear-gradient(133deg,transparent 36%,#1f6bb22b 36% 41%,transparent 41% 46%,#c42a3b26 46% 51%,transparent 51%);pointer-events:none}
+.faq-section:before{top:-85px;left:-80px}
+.faq-section:after{right:-80px;bottom:-85px;transform:rotate(180deg);mask-image:linear-gradient(transparent 50%,#000 90%)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:54px;align-items:start}
+.faq-copy{min-width:0}
+.faq-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;padding:4px 14px 4px 4px;border-radius:999px;background:#dcecfb;color:#155b99;font-size:12px;font-weight:600;line-height:1.5}
+.faq-eyebrow>span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:18px;font-weight:600}
+.faq-copy h2{font-size:64px;line-height:1.02;letter-spacing:-2.3px;text-transform:uppercase;color:var(--ink)}
+.faq-copy h2>span{display:block;color:var(--blue)}
+.faq-copy .body-copy{max-width:530px;font-size:16px;line-height:1.65;margin-top:18px}
+.faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px;margin-top:26px}
+.faq-list details{min-width:0;border:1px solid #e5eff9;border-radius:14px;background:#fffffff2;box-shadow:0 6px 18px #215b8d06;transition:border-color .18s,box-shadow .18s}
+.faq-list details:hover,.faq-list details[open]{border-color:#a8cbe9;box-shadow:0 8px 22px #215b8d12}
+.faq-list summary{list-style:none;cursor:pointer;min-height:84px;padding:16px;display:grid;grid-template-columns:42px minmax(0,1fr) 16px;align-items:center;gap:12px;line-height:1.5;font-size:14px;font-weight:600}
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-plus{display:block;width:14px;height:14px;flex:none;position:relative;color:var(--blue);transform:rotate(45deg)}
-.faq-plus:before,.faq-plus:after{content:'';width:7px;height:1.5px;position:absolute;background:currentColor}
-.faq-plus:before{left:2px;top:8px}
-.faq-plus:after{transform:rotate(90deg);left:5px;top:5px}
-.faq-list details[open] .faq-plus{transform:rotate(225deg)}
-.faq-answer{padding:0 17px 17px 0;font-size:13px;line-height:1.8;color:var(--muted)}
+.faq-topic-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff}
+.faq-topic-icon .icon{width:23px;height:23px;stroke-width:1.8}
+.faq-question{min-width:0}
+.faq-arrow{width:16px;height:16px;color:var(--blue);transition:transform .18s}
+.faq-list details[open] .faq-arrow{transform:rotate(90deg)}
+.faq-answer{padding:0 18px 18px;font-size:13px;line-height:1.8;color:var(--muted)}
+.faq-answer a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.faq-list details[open] .faq-answer{animation:faq-reveal .18s ease-out}
+@keyframes faq-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.faq-contact{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:26px}
+.faq-contact p{font-size:11px;line-height:1.7;color:#3e586c}
+.faq-contact strong{font-weight:400}
+.faq-contact-button{flex:none;min-height:44px;padding:10px 15px;border:1px solid #6ca2cd;background:#ffffffa6;color:#155b99;font-size:11px}
+.faq-contact-button .icon{width:16px;height:16px}
+.faq-contact-button:hover{background:#fff;border-color:var(--blue)}
+.faq-art{position:relative;isolation:isolate;min-width:0;min-height:550px;padding:12px 0 30px}
+.faq-art:before{content:'';position:absolute;z-index:-1;inset:10% -8% 8% 0;background:radial-gradient(ellipse,#b8d9fa70,transparent 68%);pointer-events:none}
+.faq-decoration{position:absolute;top:125px;right:-48px;z-index:0;width:340px;max-width:none;pointer-events:none}
+.faq-art .faq-phone{position:relative;z-index:1;width:264px;max-width:none;margin-left:18px;transform:rotate(-6deg);box-shadow:0 24px 35px -10px #123a6552,5px 3px 0 #263746}
+.faq-phone-brand{display:flex;align-items:center;gap:12px;padding:4px 14px 10px}
+.faq-phone-brand>.icon{width:15px;height:15px;transform:rotate(180deg);color:var(--blue)}
+.faq-phone-brand>img{width:104px;height:auto}
+.faq-phone-content{padding:0 14px 10px}
+.faq-phone-title{display:block;margin:6px 0 16px;font-size:14px;line-height:1.4;font-weight:600;letter-spacing:-.2px}
+.faq-phone-search{display:flex;align-items:center;gap:7px;min-height:32px;padding:8px;margin-bottom:12px;border:1px solid #edf4fb;border-radius:7px;background:#f3f8ff;color:#6e8597;font-size:9px;line-height:1.4;box-shadow:0 3px 8px #1f6bb20d}
+.faq-phone-search .icon{width:13px;height:13px;color:var(--blue)}
+.faq-phone-topics{list-style:none;padding:0;margin:0}
+.faq-phone-topics li{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:8px 0;border-bottom:1px solid #edf3f8;font-size:10px;line-height:1.4}
+.faq-phone-topics li>span{font-size:17px;line-height:1;color:var(--blue)}
+.faq-phone-action{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;padding:10px 5px;border-radius:999px;background:var(--blue);color:#fff;font-size:10px;line-height:1.4}
+.faq-phone-action .icon{width:12px;height:12px}
+.faq-phone-home{display:block;width:65px;height:3px;margin:14px auto 0;border-radius:999px;background:#152d40}
+.faq-art figcaption{position:absolute;bottom:6px;left:0;width:300px;font-size:9px;line-height:1.6;text-align:center;color:#607d94}
 .closing-section{padding-bottom:32px}
-.closing-panel{position:relative;isolation:isolate;overflow:hidden;min-height:275px;padding:34px 42px;width:min(calc(100% - 32px),1236px);border:1px solid #dfeaf4;border-radius:23px;background:linear-gradient(120deg,#edf5fb,#dcebf7)}
+.closing-panel{position:relative;isolation:isolate;overflow:hidden;min-height:275px;padding:34px 42px;width:min(calc(100% - 32px),1236px);border:1px solid #dfeaf4;border-radius:23px;background:linear-gradient(0deg,#fff,transparent 140px),linear-gradient(120deg,#edf5fb,#dcebf7)}
+.closing-panel:after{content:'';position:absolute;inset:auto 0 0;z-index:-1;height:55px;background:linear-gradient(transparent,#fff);pointer-events:none}
 .closing-panel:before{content:'';position:absolute;right:40px;top:20px;width:160px;aspect-ratio:162/138;z-index:-1;background:url("assets/pixel-cluster.svg") center/contain no-repeat;opacity:.3;pointer-events:none}
-.closing-car{position:absolute;width:52%;right:20px;bottom:0;pointer-events:none;z-index:-1}
+.closing-car{position:absolute;width:52%;height:100%;right:20px;bottom:0;object-fit:contain;object-position:right bottom;pointer-events:none;z-index:-1}
 .closing-copy{max-width:430px}
 .closing-copy h2{font-size:34px;letter-spacing:-1.2px}
 .closing-copy>p:not(.section-label){font-size:13px;color:#3e586c;margin-top:12px}
 .closing-copy .button{margin-top:21px;font-size:13px}
+.tariff-section,.passenger-section>.app-grid,.driver-section>.driver-grid,.faq-section,.closing-section>.closing-panel{--panel-gutter:max(48px,calc((min(100vw,1440px) - 1236px)/2));width:min(100%,1440px);max-width:1440px;margin-inline:auto;border:0;border-radius:28px 28px 0 0}
+.passenger-section>.app-grid,.driver-grid>.driver-content,.closing-section>.closing-panel{padding-inline:var(--panel-gutter)}
 .site-footer{padding:34px 0 24px;background:var(--ink);border-top:1px solid #e8eef3}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:46px;padding-bottom:39px}
 .site-footer .brand-logo{width:176px}
@@ -253,6 +311,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 
 
 @media(max-width:1120px){
+  .tariff-section,.passenger-section>.app-grid,.driver-section>.driver-grid,.faq-section,.closing-section>.closing-panel{--panel-gutter:32px}
   .container{width:calc(100% - 64px)}
   .header-inner{gap:24px}
   .main-nav{gap:20px}
@@ -279,7 +338,20 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .app-perk-icon .icon{width:22px;height:22px}
   .app-perk strong{font-size:12px}
   .driver-content{padding:35px 32px}
-  .faq-grid{gap:50px}
+  .driver-content h2{font-size:48px}
+  .driver-content .body-copy{font-size:20px}
+  .driver-benefits{gap:18px}
+  .driver-benefits strong{font-size:15px}
+  .driver-benefits div>span{font-size:13px}
+  .driver-visual{min-height:620px;border-top-left-radius:110px}
+  .faq-grid{gap:36px}
+  .faq-copy h2{font-size:54px}
+  .faq-list summary{grid-template-columns:36px minmax(0,1fr) 15px;gap:10px;padding:14px;font-size:13px}
+  .faq-topic-icon{width:36px;height:36px}
+  .faq-topic-icon .icon{width:21px;height:21px}
+  .faq-art .faq-phone{width:242px;margin-left:6px}
+  .faq-decoration{width:290px;right:-40px;top:145px}
+  .faq-contact{flex-wrap:wrap;gap:12px}
   .footer-grid{gap:27px}
   .footer-phone{font-size:18px}
 }
@@ -338,16 +410,32 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .passenger-section{padding-block:36px 50px}
   .body-copy{font-size:14px}
   .driver-content{padding:30px 25px}
-  .driver-visual{min-height:470px}
-  .driver-phone{font-size:23px}
-  .driver-actions>.button{font-size:11px;padding-inline:17px}
-  .faq-grid{gap:34px}
-  .faq-copy h2{font-size:29px}
+  .driver-visual{min-height:620px}
+  .driver-content h2{font-size:42px}
+  .driver-content .body-copy{font-size:18px}
+  .driver-benefits li{gap:12px}
+  .driver-benefit-icon{width:44px;height:44px;border-radius:13px}
+  .driver-benefit-icon .icon{width:25px;height:25px}
+  .driver-phone{font-size:13px}
+  .driver-actions>.driver-join{min-width:0;width:100%;font-size:16px;padding-inline:22px}
+  .faq-section{padding-block:48px}
+  .faq-grid{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px}
+  .faq-copy h2{font-size:46px;letter-spacing:-1.7px}
+  .faq-copy .body-copy{font-size:14px}
+  .faq-list{gap:10px;margin-top:22px}
+  .faq-list summary{grid-template-columns:32px minmax(0,1fr) 14px;gap:8px;padding:12px;font-size:12px}
+  .faq-topic-icon{width:32px;height:32px}
+  .faq-topic-icon .icon{width:19px;height:19px}
+  .faq-arrow{width:14px;height:14px}
+  .faq-art .faq-phone{width:220px;margin-left:0}
+  .faq-decoration{width:240px;right:-38px;top:165px}
+  .faq-art figcaption{width:240px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
   .footer-grid>div:first-child{grid-column:1/-1}
   .footer-phone{font-size:22px}
 }
 @media(max-width:700px){
+  .tariff-section,.passenger-section>.app-grid,.driver-section>.driver-grid,.faq-section,.closing-section>.closing-panel{--panel-gutter:20px;border-radius:22px 22px 0 0}
   html{scroll-padding-top:76px}
   .container{width:calc(100% - 40px)}
   .header-inner{height:58px;gap:15px}
@@ -384,7 +472,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .trust-card:nth-child(even){border-right:0;padding-right:0}
   .trust-card h3{font-size:12px;line-height:1.5}
   .trust-card p{font-size:11px;line-height:1.75}
-  .tariff-section{padding-block:32px}
+  .tariff-section{margin-top:28px;padding-block:32px;border-radius:22px 22px 0 0}
   .tariff-section:before{top:-60px;right:-180px;width:500px;height:470px;opacity:.65}
   .section-heading{display:block;margin-bottom:22px}
   .section-heading .section-label{margin-bottom:12px}
@@ -425,19 +513,47 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .screenshot figcaption{font-size:12px}
   .driver-section{padding-bottom:40px}
   .driver-grid{display:flex;flex-direction:column;width:calc(100% - 24px);border-radius:20px}
-  .driver-visual{min-height:0;height:320px}
+  .driver-visual{min-height:0;height:350px;border-radius:60px 0 0 0}
   .driver-visual img{object-position:center 35%}
   .driver-content{padding:28px 24px}
-  .driver-phone{font-size:27px}
-  .driver-actions{margin-top:23px;padding-top:19px}
-  .driver-actions>.button{width:100%;font-size:13px;min-height:48px;margin-top:18px}
-  .faq-section{padding-bottom:34px}
-  .faq-grid{display:block}
-  .faq-copy{margin-bottom:24px}
-  .faq-copy h2{font-size:30px}
-  .faq-copy .body-copy{font-size:13px}
-  .faq-list summary{font-size:13px;padding-block:15px}
+  .driver-content h2{font-size:38px;letter-spacing:-1.3px}
+  .driver-content .body-copy{font-size:18px;margin-top:12px}
+  .driver-benefits{gap:17px;margin-top:24px}
+  .driver-benefits strong{font-size:15px}
+  .driver-benefits div>span{font-size:12px}
+  .driver-phone{font-size:13px}
+  .driver-actions{margin-top:25px}
+  .driver-actions>.driver-join{width:100%;font-size:16px;min-height:56px;margin:0}
+  .driver-contact{margin-top:8px}
+  .faq-section{padding:32px 0 22px;margin-bottom:40px;border-radius:22px 22px 0 0}
+  .faq-section:before{left:-105px;top:-110px}
+  .faq-section:after{right:-110px;bottom:-115px}
+  .faq-grid{display:flex;flex-direction:column;gap:26px}
+  .faq-copy{width:100%;margin:0}
+  .faq-eyebrow{font-size:11px;margin-bottom:16px}
+  .faq-copy h2{font-size:clamp(40px,11.2vw,52px);line-height:1.03;letter-spacing:-1.5px}
+  .faq-copy .body-copy{font-size:14px;margin-top:16px}
+  .faq-list{grid-template-columns:1fr;gap:10px;margin-top:22px}
+  .faq-list summary{grid-template-columns:36px minmax(0,1fr) 16px;min-height:72px;padding:14px;gap:12px;font-size:13px}
+  .faq-topic-icon{width:36px;height:36px}
+  .faq-topic-icon .icon{width:21px;height:21px}
+  .faq-arrow{width:16px;height:16px}
   .faq-answer{font-size:13px}
+  .faq-contact{flex-direction:column;align-items:stretch;gap:14px;margin-top:22px}
+  .faq-contact p{font-size:12px}
+  .faq-contact-button{width:100%;font-size:13px;min-height:48px}
+  .faq-art{width:min(100%,380px);align-self:center;height:410px;min-height:0;padding:0}
+  .faq-art .faq-phone{position:absolute;top:24px;left:-2px;width:clamp(184px,58vw,218px);margin:0;transform:rotate(-6deg) scale(.78);transform-origin:top left}
+  .faq-decoration{width:220px;right:-20px;top:98px}
+  .faq-phone .phone-status{height:30px;font-size:8px;padding:10px 14px 4px}
+  .faq-phone .phone-camera{width:55px;height:13px;top:7px}
+  .faq-phone-brand>img{width:92px}
+  .faq-phone-content{padding-inline:12px}
+  .faq-phone-title{font-size:13px;margin-bottom:12px}
+  .faq-phone-search{font-size:8px;min-height:29px}
+  .faq-phone-topics li{min-height:29px;font-size:9px}
+  .faq-phone-action{font-size:9px;padding:8px 4px}
+  .faq-art figcaption{width:250px;bottom:0}
   .closing-section{padding-bottom:24px}
   .closing-panel{width:calc(100% - 24px);min-height:440px;padding:27px 24px;border-radius:19px}
   .closing-panel:before{right:16px;top:auto;bottom:25px;width:100px}
@@ -461,6 +577,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .toast>p{font-size:12px}
 }
 @media(max-width:360px){
+  .tariff-section,.passenger-section>.app-grid,.driver-section>.driver-grid,.faq-section,.closing-section>.closing-panel{--panel-gutter:16px}
   .container{width:calc(100% - 32px)}
   .site-header .brand-logo{width:136px}
   .mobile-driver-link{font-size:11px}
@@ -473,9 +590,6 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .app-badge{padding-inline:9px;gap:8px}
   .app-badge strong{font-size:17px}
   .driver-content{padding:26px 21px}
-  .driver-content h2{font-size:27px}
-  .driver-phone{font-size:24px}
-  .driver-actions>.button{font-size:12px}
   .footer-phone{font-size:21px}
 }
 @media(max-width:900px) and (max-height:500px) and (orientation:landscape){
