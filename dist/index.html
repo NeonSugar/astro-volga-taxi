@@ -16,9 +16,9 @@
   <link rel="preload" href="assets/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/taxi-app-hero.webp?v=2">
-  <link rel="stylesheet" href="styles.css?v=section-panels-1">
+  <link rel="stylesheet" href="styles.css?v=contacts-reference-1">
   <script src="config.js?v=tariff-reference-1" defer></script>
-  <script src="script.js?v=passenger-reference-1" defer></script>
+  <script src="script.js?v=contacts-reference-1" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -36,6 +36,7 @@
     <symbol id="i-percent" viewBox="0 0 24 24"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/><path d="m5 19 14-14"/></symbol>
     <symbol id="i-steering" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M3.5 10h5.7m5.6 0h5.7M12 15v6"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
   </svg>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
@@ -96,8 +97,8 @@
 
     <section class="section tariff-section" id="tariffs" aria-labelledby="tariffs-title" hidden>
       <div class="container">
-        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title">Выбирайте<br>подходящий тариф</h2><p class="tariff-intro">Для повседневных поездок, встреч и особых планов.</p></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><br>Пример наполнения, не действующие тарифы службы.</p></div>
-        <div class="tariff-grid" data-tariff-list></div>
+        <div class="section-heading"><div><p class="section-label">Тарифы</p><h2 id="tariffs-title"><span class="tariff-title-full">Выбирайте<br>подходящий тариф</span><span class="tariff-title-compact">Выбирайте тариф</span></h2><p class="tariff-intro">Для повседневных поездок, встреч и особых планов.</p></div><p class="tariff-disclaimer"><strong>Демонстрационные цены.</strong><span class="tariff-disclaimer-detail"><br>Пример наполнения, не действующие тарифы службы.</span><span class="tariff-swipe-hint" aria-hidden="true">Листайте <svg class="icon"><use href="#i-arrow"/></svg></span></p></div>
+        <div class="tariff-grid" data-tariff-list role="region" aria-labelledby="tariffs-title" tabindex="0"></div>
         <p class="image-note">Автомобили на изображениях — иллюстрации классов. Модель при заказе может отличаться.</p>
       </div>
     </section>
@@ -121,7 +122,7 @@
       <div class="container app-grid">
         <div class="app-content">
           <p class="section-label">Приложение Астро-Волга Такси</p>
-          <h2 id="passenger-title">Удобное<br>приложение</h2>
+          <h2 id="passenger-title">Удобное<br> приложение</h2>
           <p class="body-copy">Заказывай такси в несколько касаний.<br>Твой маршрут — в твоём телефоне.</p>
           <ul class="app-points">
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Адреса и маршрут в одном месте</li>
@@ -219,12 +220,25 @@
         </figure>
       </div>
     </section>
-    <section class="closing-section" aria-labelledby="closing-title">
-      <div class="container closing-panel"><div class="closing-copy"><p class="section-label">Рядом с вашими планами</p><h2 id="closing-title">Город ждёт.<br>Поехали с нами.</h2><p>Закажите такси для поездки по Луганску.</p><button class="button button-primary" type="button" data-action="call" data-position="closing">Позвонить в службу<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div><img class="closing-car" src="assets/taxi-clean.webp" width="1400" height="700" alt="" aria-hidden="true" loading="lazy" decoding="async"></div>
+    <section class="contact-section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contact-panel">
+        <div class="contact-copy">
+          <p class="section-label">Контакты</p>
+          <h2 id="contacts-title">Остались вопросы?<br>Мы всегда на связи.</h2>
+          <p class="contact-intro">Свяжитесь со службой по вопросам поездок.</p>
+          <ul class="contact-list">
+            <li><span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span><div><strong>Телефон:</strong><button class="contact-value" type="button" data-action="call" data-position="contacts"><span data-phone>+7 (000) 000-00-00</span></button></div></li>
+            <li><span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span><div><strong>Email:</strong><button class="contact-value" type="button" data-action="email" data-position="contacts"><span data-contact-email-display>hello@example.com</span></button></div></li>
+            <li><span class="contact-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin"/></svg></span><div><strong>Адрес:</strong><span data-contact-address>г. Луганск, адрес уточняется</span></div></li>
+          </ul>
+          <button class="button button-primary contact-write" type="button" data-action="email" data-position="contacts">Написать нам<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+        <figure class="contact-photo"><img src="assets/taxi-evening.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Иллюстрация: такси на вечерней городской улице"><figcaption>Иллюстративное изображение</figcaption></figure>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="contacts">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div><a class="brand" href="#top" aria-label="Астро-Волга Такси — на главную"><img class="brand-logo" src="assets/taxi-logo.svg?v=2" width="436" height="146" alt="Астро-Волга Такси"></a><p class="footer-city">Луганск</p></div>

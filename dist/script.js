@@ -37,6 +37,8 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape') toast.hidden = true; });
   text('[data-phone]', config.phoneDisplay || '+7 (000) 000-00-00');
   text('[data-driver-phone]', config.driverContact?.phoneDisplay || '+7 (000) 000-00-01');
+  text('[data-contact-email-display]', config.emailDisplay || emailAddress(config.email) || 'hello@example.com');
+  text('[data-contact-address]', config.address || 'г. Луганск, адрес уточняется');
   text('[data-year]', new Date().getFullYear());
   document.querySelector('[data-demo-note]').hidden = config.demoMode === false;
 
@@ -146,6 +148,11 @@
     const action = button.dataset.action;
     const channel = button.dataset.channel || 'passenger';
     const position = button.dataset.position || 'page';
+    if (action === 'email') {
+      const email = emailAddress(config.email);
+      if (!email) { notify('Email службы пока не добавлен. Это демонстрационная версия.'); return; }
+      track('email_click', { position }); location.href = 'mailto:' + email; return;
+    }
     if (action === 'call') {
       const phone = phoneNumber(channel === 'driver' ? config.driverContact?.phone : config.phone);
       if (!phone) { notify(channel === 'driver' ? 'Номер для подключения водителей пока не добавлен.' : 'Номер службы пока не добавлен. Это демонстрационная версия.'); return; }
