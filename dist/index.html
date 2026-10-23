@@ -17,9 +17,9 @@
   <link rel="preload" href="assets/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/taxi-app-hero.webp?v=2" media="(min-width:701px), (orientation:landscape)">
   <link rel="preload" as="image" href="assets/taxi-hero-mobile.webp" media="(max-width:700px) and (orientation:portrait)">
-  <link rel="stylesheet" href="styles.css?v=portrait-app-reference-1">
+  <link rel="stylesheet" href="styles.css?v=mobile-navigation-2">
   <script src="config.js?v=tariff-cars-2" defer></script>
-  <script src="script.js?v=tariff-cars-2" defer></script>
+  <script src="script.js?v=mobile-navigation-2" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -44,18 +44,20 @@
       <a class="brand" href="#top" aria-label="Астро-Волга Такси — на главную">
         <img class="brand-logo" src="assets/taxi-logo.svg?v=2" width="436" height="146" alt="Астро-Волга Такси">
       </a>
-      <nav class="main-nav" aria-label="Основная навигация">
+      <button class="mobile-menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Открыть меню"><span class="mobile-menu-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="main-nav" id="main-navigation" aria-label="Основная навигация">
         <a href="#top">Главная</a>
         <a href="#tariffs" data-tariff-link hidden>Тарифы</a>
         <a href="#passengers">Приложение</a>
         <a href="#drivers">Водителям</a>
+        <a href="#faq">Вопросы</a>
         <a href="#contacts">Контакты</a>
         <span class="nav-indicator" aria-hidden="true"></span>
       </nav>
       <button class="header-download" type="button" data-action="passenger" data-position="header"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Скачать приложение</button>
-      <a class="mobile-driver-link" href="#drivers">Водителям</a>
     </div>
   </header>
+  <div class="mobile-nav-backdrop" aria-hidden="true"></div>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">

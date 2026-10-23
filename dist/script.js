@@ -182,6 +182,53 @@
 
   const nav = document.querySelector('.main-nav');
   const header = document.querySelector('.site-header');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const menuBackdrop = document.querySelector('.mobile-nav-backdrop');
+  const mobileMenuMedia = window.matchMedia('(max-width:700px)');
+  let menuOpen = false;
+  const setMenu = (open, restoreFocus = false) => {
+    const scrollbarGap = menuOpen ? 0 : window.innerWidth - document.documentElement.clientWidth;
+    const wasOpen = menuOpen;
+    menuOpen = open && mobileMenuMedia.matches;
+    if (menuOpen && !wasOpen) document.body.style.paddingRight = scrollbarGap > 0 ? scrollbarGap + 'px' : '';
+    if (!menuOpen) document.body.style.paddingRight = '';
+    document.body.classList.toggle('mobile-menu-open', menuOpen);
+    menuToggle.setAttribute('aria-expanded', String(menuOpen));
+    menuToggle.setAttribute('aria-label', menuOpen ? 'Закрыть меню' : 'Открыть меню');
+    nav.inert = mobileMenuMedia.matches && !menuOpen;
+    if (restoreFocus) menuToggle.focus({ preventScroll: true });
+  };
+  nav.querySelectorAll('a').forEach((link, index) => {
+    link.style.setProperty('--menu-index', String(index));
+    link.addEventListener('click', event => {
+      if (!menuOpen) return;
+      event.preventDefault();
+      setMenu(false);
+      const target = document.getElementById(link.hash.slice(1));
+      if (target) {
+        if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        window.requestAnimationFrame(() => target.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start',
+        }));
+      }
+    });
+  });
+  menuToggle.addEventListener('click', () => setMenu(!menuOpen));
+  menuBackdrop.addEventListener('click', () => setMenu(false, true));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuOpen) { event.preventDefault(); setMenu(false, true); }
+  });
+  header.addEventListener('focusout', event => {
+    if (menuOpen && event.relatedTarget && !header.contains(event.relatedTarget)) setMenu(false);
+  });
+  header.querySelector('.brand').addEventListener('click', () => setMenu(false));
+  mobileMenuMedia.addEventListener('change', () => {
+    const focusWasInNav = nav.contains(document.activeElement);
+    setMenu(false, mobileMenuMedia.matches && focusWasInNav);
+  });
+  setMenu(false);
   const navSections = [...nav.querySelectorAll('a[href^="#"]')].map(link => ({
     link, section: document.getElementById(link.getAttribute('href').slice(1)),
   })).filter(item => item.section);
@@ -190,6 +237,7 @@
   let navNeedsMeasure = true;
   const updateNav = () => {
     navFramePending = false;
+    if (menuOpen) return;
     const visibleSections = navSections.filter(item => !item.link.hidden && !item.section.hidden);
     if (!visibleSections.length) return;
     const activationLine = header.getBoundingClientRect().bottom + Math.min(window.innerHeight * .2, 120);
