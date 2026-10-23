@@ -87,3 +87,18 @@ Use case: ads-marketing. Asset type: original main hero creative for the Russian
 Финальный промпт:
 
 Use case: precise-object-edit. Input image is the existing hero creative for Астро-Волга Такси. Keep the exact modern white taxi sedan with blue lower-body accents and small red rooftop taxi light from the reference, keep its front-left three-quarter camera angle and its elegant physical proportions. Remove absolutely all city architecture, buildings, trees, clouds, water, route ribbon and background elements. The only subject must be the taxi itself with a very soft realistic contact shadow. Refine it into premium realistic automotive studio photography: crisp paint and metal reflections, clean windows, natural daylight, beautiful restrained lighting, no plastic toy look. Entire car and all wheels must be visible with breathing room, no cropping. Wide landscape composition, car occupying roughly 85 percent of width and centered. Background genuinely transparent. Do not add any text, logos, watermark, scenery, road or decorative elements. Preserve the white, blue and red brand color scheme.
+
+## Иконки платформ — 23 октября 2026
+
+Контурные пиктограммы в кнопках Hero и приложения заменены локальными фирменными SVG без изменения исходных файлов:
+- Android: https://developer.android.com/static/images/brand/android-head_flat.svg — зелёный знак из https://developer.android.com/distribute/marketing-tools/brand-guidelines. Android robot is reproduced from work created and shared by Google and used according to the Creative Commons 3.0 Attribution License (https://creativecommons.org/licenses/by/3.0/).
+- RuStore: https://static.rustore.ru/rustore-strapi/6/Ru_Store_Icon_e51d8c68ef.svg — иконка из официального медиакита https://www.rustore.ru/media-kit.
+
+Иконки декоративные: доступные имена задаются кнопками. Подписи и обработчики скачивания сохранены; заменена и иконка скрытой ссылки RuStore, которая появляется после настройки URL.
+
+## Вертикальный Hero по референсу — 23 октября 2026
+
+Встроенным imagegen подготовлен отдельный фон для мобильной портретной ориентации. Исходный референс заказчика: `codex-clipboard-a719e5a7-9462-47eb-8f75-1b8913ab74f5.png`. Удалены элементы сайта из изображения; сохранена композиция города, автомобиля и телефона. Заголовок, тексты и кнопки отрисовываются HTML. Исходник сохранён в `dist/assets/taxi-hero-mobile.png`, оптимизированная версия 1060×1484 — `dist/assets/taxi-hero-mobile.webp`. Desktop и landscape используют прежний креатив.
+
+Финальный prompt (built-in imagegen, precise-object-edit):
+> Create the background-only asset for the mobile website shown in reference. Crop out the white header entirely and the download buttons/phone number at bottom entirely. Output a portrait 5:7 image matching only the illustrated hero scene between header and download buttons. REMOVE ALL large overlaid website text: slogan, АСТРО-ВОЛГА ТАКСИ headline, both paragraphs. Seamlessly reconstruct blue sky and city behind this removed text. Preserve the original photographic composition: white branded taxi SUV across the bottom foreground, entire vehicle visible, large smartphone on right from middle height to near bottom, Lugansk monument, flags, trees behind it. Keep original red-blue taxi logos and text INSIDE the phone screen and car markings. Upper 35 percent of image must be light blue sky, open and quiet for live HTML title. Middle left must be pale clear sky/soft faded city for live HTML body copy. Keep car low in composition approx bottom 25 percent, phone from 40 percent height to 93 percent. This is only a clean scene asset, not a UI screenshot. No header, buttons, navigation, extra headline text, watermarks or new elements. Match reference as closely as possible.

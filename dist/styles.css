@@ -65,6 +65,7 @@ h2 {color: var(--blue-dark);}
 .app-badge{display:flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:10px 16px;border:1px solid #26333e;border-radius:10px;background:#070e14;color:#fff;text-align:left}
 .app-badge:hover{background:var(--blue);border-color:var(--blue)}
 .app-badge>.icon{width:27px;height:27px;stroke-width:1.6}
+.app-badge>.app-platform-icon{object-fit:contain;flex:none}
 .app-badge>span{font-size:10px;line-height:1.35}
 .app-badge strong{display:block;font-size:20px;font-weight:600;line-height:1.25;letter-spacing:-.6px}
 .hero-call{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:0 8px;color:var(--muted);font-size:11px;line-height:1.5}
@@ -214,7 +215,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .driver-benefits strong{display:block;font-size:18px;line-height:1.4;letter-spacing:-.3px}
 .driver-benefits div>span{display:block;margin-top:3px;font-size:15px;line-height:1.5;color:#6c8192}
 .driver-actions{display:flex;flex-direction:column;align-items:flex-start;margin-top:30px}
-.driver-actions>.driver-join{justify-content:space-between;gap:30px;min-width:350px;min-height:64px;padding:16px 28px;margin:0;background:var(--blue);color:#fff;font-size:20px}
+.driver-actions>.driver-join{justify-content:center;min-width:350px;min-height:64px;padding:16px 28px;margin:0;background:var(--blue);color:#fff;font-size:20px}
 .driver-join:hover{background:#15578f}
 .driver-join .icon{width:26px;height:26px}
 .driver-app-note{margin-top:8px;font-size:11px;line-height:1.5;color:#6c8192}
@@ -222,7 +223,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .driver-phone{display:block;min-height:44px;padding:0;background:transparent;color:#3e586c;font-size:14px;font-weight:600;line-height:1.5;white-space:nowrap}
 .driver-phone:hover{color:var(--blue)}
 .driver-actions>.inline-link{margin-top:14px}
-.contact-label{font-size:12px;line-height:1.6;color:var(--light);margin-bottom:7px}
+.contact-label{font-size:16px;line-height:1.6;color:var(--light);margin-bottom:7px}
 .inline-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--blue);line-height:1.7}
 .inline-link .icon{width:15px;height:15px}
 .inline-link:hover{text-decoration:underline;text-underline-offset:4px}
@@ -422,7 +423,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .tariff-features li{font-size:12px;padding-left:23px}
   .tariff-badge{padding-inline:14px;font-size:11px}
   .passenger-section{padding-block:36px 50px}
-  .body-copy{font-size:14px}
+  .body-copy{font-size:16px}
   .driver-content{padding:30px 25px}
   .driver-visual{min-height:620px}
   .driver-content h2{font-size:42px}
@@ -435,7 +436,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .faq-section{padding-block:48px}
   .faq-grid{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px}
   .faq-copy h2{font-size:46px;letter-spacing:-1.7px}
-  .faq-copy .body-copy{font-size:14px}
+  .faq-copy .body-copy{font-size:16px}
   .faq-list{gap:10px;margin-top:22px}
   .faq-list summary{grid-template-columns:32px minmax(0,1fr) 14px;gap:8px;padding:12px;font-size:12px}
   .faq-topic-icon{width:32px;height:32px}
@@ -465,7 +466,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .hero-title{font-size:clamp(38px,11.6vw,56px);letter-spacing:-1px;line-height:1}
   .hero-title-service{font-size:1.08em;letter-spacing:-1px;margin-top:2px}
   .hero .lead{margin-top:12px}
-  .hero .lead strong{font-size:19px;line-height:1.4}
+  .hero .lead strong{font-size:19px;line-height:1.4;display: none;}
   .hero .lead>span,.hero-features{display:none}
   .hero-actions{width:100%;margin:16px 0 0;gap:4px}
   .hero-downloads{gap:10px}
@@ -478,7 +479,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .hero-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#f5f9fd,transparent 12%);pointer-events:none}
   h2{font-size:30px;line-height:1.22;letter-spacing:-1px}
   .section-label{font-size:10px;margin-bottom:12px}
-  .body-copy{font-size:14px;margin-top:16px}
+  .body-copy{font-size:16px;margin-top:16px}
   .trust-section{padding:20px 0 27px}
   .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 0}
   .trust-card{padding:0 14px}
@@ -510,7 +511,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .app-grid{display:flex;flex-direction:column;align-items:stretch;gap:27px;padding:27px 22px;border-radius:22px}
   .app-grid:before{inset:30% -45% -10% 12%;transform:rotate(10deg)}
   .app-content h2{font-size:36px;letter-spacing:-1.2px}
-  .app-content .body-copy{font-size:14px;margin-top:14px}
+  .app-content .body-copy{font-size:16px;margin-top:14px}
   .app-content .section-label{font-size:9px}
   .app-points{margin-top:18px}
   .app-points li{font-size:12px}
@@ -546,7 +547,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .faq-copy{width:100%;margin:0}
   .faq-eyebrow{font-size:11px;margin-bottom:16px}
   .faq-copy h2{font-size:clamp(40px,11.2vw,52px);line-height:1.03;letter-spacing:-1.5px}
-  .faq-copy .body-copy{font-size:14px;margin-top:16px}
+  .faq-copy .body-copy{font-size:16px;margin-top:16px}
   .faq-list{grid-template-columns:1fr;gap:10px;margin-top:22px}
   .faq-list summary{grid-template-columns:36px minmax(0,1fr) 16px;min-height:72px;padding:14px;gap:12px;font-size:13px}
   .faq-topic-icon{width:36px;height:36px}
@@ -662,7 +663,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .app-content{display:contents}
   .app-content>.section-label,.app-perks{display:none}
   .app-content h2{grid-column:1/-1;font-size:28px;line-height:1.1;letter-spacing:-.8px}
-  .app-content .body-copy{grid-column:1;grid-row:2;margin:0;font-size:13px;line-height:1.45}
+  .app-content .body-copy{grid-column:1;grid-row:2;margin:0;font-size:16px;line-height:1.45}
   .app-points{grid-column:1;grid-row:3;gap:8px;margin:0}
   .app-points li{align-items:flex-start;gap:6px;font-size:12px;line-height:1.45}
   .app-points .icon{width:16px;height:16px;margin-top:2px;padding:2px}
@@ -681,7 +682,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .driver-section>.driver-grid{padding-inline:var(--panel-gutter)}
   .driver-content,.driver-content .section-copy{display:contents}
   .driver-content h2{grid-column:1/-1;grid-row:1;font-size:30px;line-height:1.1;letter-spacing:-.8px}
-  .driver-content .body-copy{grid-column:1/-1;grid-row:2;margin:0;font-size:13px;line-height:1.4}
+  .driver-content .body-copy{grid-column:1/-1;grid-row:2;margin:0;font-size:16px;line-height:1.4}
   .driver-benefits{grid-column:1;grid-row:3;gap:10px;margin:0;align-self:center}
   .driver-benefits li{gap:8px}
   .driver-benefit-icon{width:28px;height:28px;border-radius:9px}
@@ -715,27 +716,34 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .footer-grid>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:12px}
   .site-footer .brand-logo{width:136px}
   .footer-city{font-size:12px;margin:0}
-  .footer-contact .contact-label{font-size:11px;margin-bottom:2px}
-  .footer-phone{min-height:44px;font-size:12px;letter-spacing:-.2px}
-  .footer-contact .inline-link{margin-top:2px;font-size:11px}
+  .footer-contact .contact-label{font-size:16px;margin-bottom:2px}
+  .footer-phone{min-height:44px;font-size:16px;letter-spacing:-.2px}
+  .footer-contact .inline-link{margin-top:2px;font-size:14px}
   .footer-bottom{padding-top:12px;gap:8px;font-size:10px}
 }
-/* Portrait hero: text overlays the artwork; download actions sit in a separate row. */
+/* Portrait hero follows the supplied composition; copy stays selectable HTML. */
 @media(max-width:700px) and (orientation:portrait){
-  .hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(clamp(280px,calc(100svh - 178px),520px),auto) auto;background:#f5f9fd}
+  .hero{--hero-name-size:clamp(46px,15.6vw,100px);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(138vw,auto) auto;background:#eaf4ff}
   .hero-grid,.hero-copy{display:contents}
-  .hero-scene{grid-area:1 / 1;position:relative;inset:auto;z-index:0;width:100%;max-width:none;height:100%;aspect-ratio:auto;margin:0;background:#eaf4ff url("assets/taxi-app-hero.webp?v=2") center top / auto 500% no-repeat}
-  .hero-scene img{top:auto;right:0;bottom:0;width:154%;height:auto;object-fit:fill;transform:none;mask-image:linear-gradient(180deg,transparent,#000 18%)}
-  .hero-scene:after{background:linear-gradient(180deg,#f5f9fdeb 0,#f5f9fdd9 140px,#f5f9fdb8 190px,#f5f9fd00 270px)}
-  .hero-kicker,.hero-title,.hero .lead{grid-area:1 / 1;position:relative;z-index:1;align-self:start;justify-self:start;margin-inline:20px}
-  .hero-kicker{margin-top:18px;margin-bottom:0;font-size:8px;letter-spacing:.12em}
-  .hero-title{margin-top:45px;font-size:clamp(38px,10.8vw,50px)}
-  .hero .lead{margin-top:calc(57px + clamp(38px,10.8vw,50px)*2.08)}
-  .hero .lead strong{font-size:18px;line-height:1.4}
-  .hero .lead>span{display:block;margin-top:2px;font-size:12px;line-height:1.5;color:#304e64}
-  .hero-actions{grid-area:2 / 1;position:relative;z-index:1;width:100%;max-width:480px;justify-self:stretch;margin:0 auto;padding:12px 20px 6px;gap:2px}
-  .hero-downloads .app-badge{min-height:48px;padding-block:6px}
-  .hero-call{justify-content:center}
+  .hero-scene{grid-area:1 / 1;position:relative;inset:auto;z-index:0;width:100%;max-width:none;height:100%;aspect-ratio:auto;margin:0;background:#f5f9fd}
+  .hero-scene img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center bottom;transform:none;mask-image:linear-gradient(180deg,transparent 0,#000 32%)}
+  .hero-scene:after{background:linear-gradient(90deg,#edf6ffbf,#edf6ff8c 35%,transparent 65%);mask-image:linear-gradient(180deg,#000 55%,transparent 80%);pointer-events:none}
+  .hero-kicker,.hero-title,.hero .lead{grid-area:1 / 1;position:relative;z-index:1;align-self:start;justify-self:start;margin-inline:clamp(16px,4.5vw,30px)}
+  .hero-kicker{margin-top:28px;margin-bottom:0;font-size:clamp(8px,2.4vw,14px);letter-spacing:.18em;gap:14px}
+  .hero-kicker:after{width:32px}
+  .hero-title{margin-top:54px;font-size:var(--hero-name-size);line-height:.96;letter-spacing:-1.2px}
+  .hero-title-service{font-size:1.14em;line-height:.96;margin-top:4px;color:var(--blue-dark)}
+  .hero .lead{max-width:47%;margin-top:calc(72px + var(--hero-name-size)*2.0544);line-height:1.2}
+  .hero .lead strong{font-size:clamp(19px,5.4vw,32px);line-height:1.12;letter-spacing:-.3px}
+  .hero .lead>span{display:block;margin-top:6px;font-size:clamp(14px,3.9vw,23px);line-height:1.2;color:#172d3e}
+  .hero-actions{grid-area:2 / 1;position:relative;z-index:1;width:100%;max-width:600px;justify-self:stretch;margin:0 auto;padding:8px clamp(16px,4.5vw,30px) 8px;gap:5px}
+  .hero-downloads{gap:10px}
+  .hero-downloads .app-badge{min-height:54px;padding:8px;gap:10px}
+  .hero-downloads .app-badge>.icon{width:25px;height:25px}
+  .hero-downloads .app-badge>span{font-size:10px}
+  .hero-downloads .app-badge strong{font-size:clamp(18px,5.2vw,24px)}
+  .hero-call{justify-content:flex-start;font-size:12px;gap:0 8px}
+  .hero-call button{font-size:14px}
 }
 
 @media(max-width:700px) and (max-height:600px){
@@ -802,12 +810,12 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .contact-copy{display:contents}
   .contact-copy>.section-label{display:none}
   .contact-copy h2{grid-column:1/-1;grid-row:1;font-size:26px;line-height:1.12;letter-spacing:-.8px}
-  .contact-intro{grid-column:1;grid-row:2;margin:0;align-self:center;font-size:12px;line-height:1.45}
+  .contact-intro{grid-column:1;grid-row:2;margin:0;align-self:center;font-size:16px;line-height:1.45}
   .contact-list{grid-column:1/-1;grid-row:3;gap:4px;margin:0}
   .contact-list li{gap:9px;min-height:44px}
   .contact-icon{width:28px;height:28px}
   .contact-icon .icon{width:17px;height:17px}
-  .contact-list li>div{font-size:12px;line-height:1.5;gap:0 5px}
+  .contact-list li>div{font-size:14px;line-height:1.5;gap:0 5px}
   .contact-write{grid-column:1/-1;grid-row:4;justify-content:center;min-height:44px;margin:0;padding:10px 20px;font-size:15px}
   .contact-write .icon{width:20px;height:20px}
   .contact-photo{grid-column:2;grid-row:2;width:100%;min-height:0;height:clamp(64px,14svh,110px);aspect-ratio:auto;border-radius:26px 10px 20px 10px}
@@ -825,5 +833,29 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 }
 @media(max-width:700px) and (max-height:540px) and (orientation:portrait){
   .contact-panel{padding-block:8px}
+}
+/* Portrait driver section: full-width photo, then readable benefits and action. */
+@media(max-width:700px) and (orientation:portrait){
+  .driver-section{padding-bottom:20px}
+  .driver-section>.driver-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start;padding-block:24px 12px;background:linear-gradient(0deg,#fff,transparent 130px),#e6f3fc}
+  .driver-content,.driver-content .section-copy{display:contents}
+  .driver-content h2{grid-column:1;grid-row:1;font-size:clamp(34px,10.3vw,58px);line-height:1.1;letter-spacing:-1.2px}
+  .driver-content .body-copy{display:block;grid-column:1;grid-row:2;max-width:none;margin:0;font-size:clamp(17px,4.8vw,26px);line-height:1.35;color:#172d3e}
+  .driver-visual{grid-column:1;grid-row:3;width:100%;height:auto;min-height:0;aspect-ratio:1.52;border-radius:20px;background:#daeaf5}
+  .driver-visual img{object-position:center 40%}
+  .driver-visual:after{display:none}
+  .driver-visual figcaption{bottom:6px;right:8px;font-size:7px;padding:2px 5px}
+  .driver-benefits{grid-column:1;grid-row:4;align-self:start;gap:14px;margin:4px 0 0}
+  .driver-benefits li{align-items:center;gap:14px}
+  .driver-benefit-icon{width:46px;height:46px;border-radius:14px;background:#d2e9fa}
+  .driver-benefit-icon .icon{width:25px;height:25px;stroke-width:1.8}
+  .driver-benefits strong{font-size:clamp(16px,4.65vw,24px);line-height:1.25;letter-spacing:-.3px;color:#070e14}
+  .driver-benefits div>span{display:block;margin-top:4px;font-size:clamp(13px,3.9vw,20px);line-height:1.3;color:#304e60}
+  .driver-actions{grid-column:1;grid-row:5;display:flex;align-items:stretch;margin:2px 0 0}
+  .driver-actions>.driver-join{justify-content:space-between;min-width:0;min-height:54px;width:100%;padding:12px 22px;font-size:clamp(18px,5vw,25px)}
+  .driver-join .icon{width:25px;height:25px}
+  .driver-app-note{margin-top:5px;font-size:11px;line-height:1.4;color:#172d3e}
+  .driver-contact{margin-top:8px;gap:0 8px;font-size:11px;color:#172d3e}
+  .driver-phone{font-size:13px;font-weight:400;color:#172d3e}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}

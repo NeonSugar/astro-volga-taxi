@@ -15,8 +15,9 @@
   <link rel="preload" href="assets/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/taxi-app-hero.webp?v=2">
-  <link rel="stylesheet" href="styles.css?v=portrait-hero-1">
+  <link rel="preload" as="image" href="assets/taxi-app-hero.webp?v=2" media="(min-width:701px), (orientation:landscape)">
+  <link rel="preload" as="image" href="assets/taxi-hero-mobile.webp" media="(max-width:700px) and (orientation:portrait)">
+  <link rel="stylesheet" href="styles.css?v=portrait-driver-reference-1">
   <script src="config.js?v=tariff-reference-1" defer></script>
   <script src="script.js?v=contacts-reference-1" defer></script>
 </head>
@@ -29,8 +30,6 @@
     <symbol id="i-car" viewBox="0 0 24 24"><path d="m5 9 2-5h10l2 5M4 9h16v9H4zM7 18v3m10-3v3M4 12H2m20 0h-2M7 13h1m8 0h1"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-app" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
-    <symbol id="i-android" viewBox="0 0 24 24"><path d="m7 4-2-3m12 3 2-3M5 10a7 7 0 0 1 14 0Zm0 2h14v7H5zM8 19v3m8-3v3M2 12v6m20-6v6"/><path d="M9 7h.01M15 7h.01" stroke-width="2.5"/></symbol>
-    <symbol id="i-store" viewBox="0 0 24 24"><rect x="3" y="5" width="12" height="16" rx="3"/><path d="M7 5V3h10a3 3 0 0 1 3 3v12h-5M7 10h4m-4 4h4"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-percent" viewBox="0 0 24 24"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/><path d="m5 19 14-14"/></symbol>
@@ -60,7 +59,7 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <figure class="hero-scene" aria-hidden="true"><img src="assets/taxi-app-hero.webp?v=2" width="2560" height="1429" alt="" fetchpriority="high" decoding="async"></figure>
+      <figure class="hero-scene" aria-hidden="true"><picture><source media="(max-width:700px) and (orientation:portrait)" srcset="assets/taxi-hero-mobile.webp"><img src="assets/taxi-app-hero.webp?v=2" width="2560" height="1429" alt="" fetchpriority="high" decoding="async"></picture></figure>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="hero-kicker">Твой город — твоё такси</p>
@@ -74,8 +73,8 @@
           </ul>
           <div class="hero-actions">
             <div class="hero-downloads">
-              <button class="app-badge" type="button" data-action="passenger" data-platform="apk" data-position="hero" aria-label="Скачать приложение для Android"><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg><span>Скачать для<strong>Android</strong></span></button>
-              <button class="app-badge" type="button" data-action="passenger" data-platform="rustore" data-position="hero" aria-label="Открыть приложение в RuStore"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span>Открыть в<strong>RuStore</strong></span></button>
+              <button class="app-badge" type="button" data-action="passenger" data-platform="apk" data-position="hero" aria-label="Скачать приложение для Android"><img class="icon app-platform-icon" src="assets/android-color.svg" width="28" height="28" alt="" aria-hidden="true"><span>Скачать для<strong>Android</strong></span></button>
+              <button class="app-badge" type="button" data-action="passenger" data-platform="rustore" data-position="hero" aria-label="Открыть приложение в RuStore"><img class="icon app-platform-icon" src="assets/rustore-color.svg" width="28" height="28" alt="" aria-hidden="true"><span>Открыть в<strong>RuStore</strong></span></button>
             </div>
             <div class="hero-call"><span>Или позвоните</span><button type="button" data-action="call" data-position="hero" aria-label="Вызвать такси по телефону"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-phone>+7 (000) 000-00-00</span></button></div>
           </div>
@@ -131,9 +130,9 @@
           </ul>
           <div class="app-download">
             <div class="passenger-downloads">
-              <button class="app-badge" type="button" data-action="passenger" data-platform="apk" data-position="passengers" aria-label="Скачать приложение для Android"><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg><span>Скачать для<strong>Android</strong></span></button>
-              <button class="app-badge" type="button" data-rustore-placeholder data-action="passenger" data-platform="rustore" data-position="passengers" aria-label="Открыть приложение в RuStore"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span>Открыть в<strong>RuStore</strong></span></button>
-              <a class="app-badge" data-rustore data-position="passengers" hidden target="_blank" rel="noopener noreferrer" aria-label="Открыть приложение в RuStore"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span>Открыть в<strong>RuStore</strong></span></a>
+              <button class="app-badge" type="button" data-action="passenger" data-platform="apk" data-position="passengers" aria-label="Скачать приложение для Android"><img class="icon app-platform-icon" src="assets/android-color.svg" width="28" height="28" alt="" aria-hidden="true"><span>Скачать для<strong>Android</strong></span></button>
+              <button class="app-badge" type="button" data-rustore-placeholder data-action="passenger" data-platform="rustore" data-position="passengers" aria-label="Открыть приложение в RuStore"><img class="icon app-platform-icon" src="assets/rustore-color.svg" width="28" height="28" alt="" aria-hidden="true"><span>Открыть в<strong>RuStore</strong></span></button>
+              <a class="app-badge" data-rustore data-position="passengers" hidden target="_blank" rel="noopener noreferrer" aria-label="Открыть приложение в RuStore"><img class="icon app-platform-icon" src="assets/rustore-color.svg" width="28" height="28" alt="" aria-hidden="true"><span>Открыть в<strong>RuStore</strong></span></a>
             </div>
             <div class="qr-block" data-qr-block hidden><div class="qr-code" data-qr role="img" aria-label="QR-код со ссылкой на пассажирское приложение"></div><p>Наведите камеру телефона,<br>чтобы открыть приложение.</p></div>
           </div>
