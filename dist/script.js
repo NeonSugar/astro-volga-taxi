@@ -50,7 +50,7 @@
     tariffs.forEach((tariff, index) => {
       const card = template.content.firstElementChild.cloneNode(true);
       const image = card.querySelector('[data-tariff-image]');
-      image.src = ['assets/tariff-economy.webp', 'assets/tariff-comfort.webp', 'assets/tariff-lux.webp'][index];
+      image.src = ['assets/tariff-sedan.webp', 'assets/tariff-crossover.webp', 'assets/tariff-child.webp'][index];
       image.alt = 'Иллюстрация автомобиля: ' + tariff.name;
       card.querySelector('h3').textContent = tariff.name;
       card.querySelector('.tariff-description').textContent = tariff.description || '';

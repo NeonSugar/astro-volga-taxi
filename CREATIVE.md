@@ -102,3 +102,16 @@ Use case: precise-object-edit. Input image is the existing hero creative for А�
 
 Финальный prompt (built-in imagegen, precise-object-edit):
 > Create the background-only asset for the mobile website shown in reference. Crop out the white header entirely and the download buttons/phone number at bottom entirely. Output a portrait 5:7 image matching only the illustrated hero scene between header and download buttons. REMOVE ALL large overlaid website text: slogan, АСТРО-ВОЛГА ТАКСИ headline, both paragraphs. Seamlessly reconstruct blue sky and city behind this removed text. Preserve the original photographic composition: white branded taxi SUV across the bottom foreground, entire vehicle visible, large smartphone on right from middle height to near bottom, Lugansk monument, flags, trees behind it. Keep original red-blue taxi logos and text INSIDE the phone screen and car markings. Upper 35 percent of image must be light blue sky, open and quiet for live HTML title. Middle left must be pale clear sky/soft faded city for live HTML body copy. Keep car low in composition approx bottom 25 percent, phone from 40 percent height to 93 percent. This is only a clean scene asset, not a UI screenshot. No header, buttons, navigation, extra headline text, watermarks or new elements. Match reference as closely as possible.
+
+## Изображение контактов — 23 октября 2026
+
+Изображение заменено на предоставленный заказчиком файл `codex-clipboard-a7e495b3-cb1c-46be-b6ea-a5cd880ff0c0.png`. Исходник сохранён как `dist/assets/taxi-contacts-lugansk.png`, для сайта подготовлен WebP 1800×1005: `dist/assets/taxi-contacts-lugansk.webp`. Содержание изображения не менялось; выполнены уменьшение и сжатие. Подпись об иллюстративном характере сохранена.
+
+## Автомобили тарифов — 23 октября 2026
+
+Три изображения предоставлены заказчиком, без генерации и изменения содержания. PNG сохранены в assets, для сайта подготовлены WebP 1100×614 с исходной прозрачностью:
+- `codex-clipboard-2f39e7b0-408c-448c-887a-c92be3dd925d.png` → `tariff-sedan.png` / `tariff-sedan.webp` — Эконом.
+- `codex-clipboard-192baa47-5703-43e0-8fed-effbe06ed0c3.png` → `tariff-crossover.png` / `tariff-crossover.webp` — Комфорт.
+- `codex-clipboard-73228824-abfd-4594-b343-fc183f71bc33.png` → `tariff-child.png` / `tariff-child.webp` — Детский.
+
+WebP суммарно 355 114 байт. Старые иллюстрации сохранены в проекте, но в карточках больше не используются.

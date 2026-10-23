@@ -20,9 +20,9 @@ window.ASTRO_CONFIG = {
   // features: up to three strings; featured: highlighted card; badge: optional short label.
   // A tariff is shown only when all three prices are finite nonnegative numbers.
   tariffs: [
-    { name: 'Економ', description: 'Для повседневных поездок по городу.', boarding: 150, perKm: 18, perMinute: 4, features: ['На каждый день', 'По городу и по делам', 'Заказ в приложении'] },
-    { name: 'Комфорт', description: 'Больше пространства и удобства в дороге.', boarding: 220, perKm: 25, perMinute: 6, features: ['Просторный салон', 'Для деловых встреч', 'Заказ в приложении'], featured: true, badge: 'Больше комфорта' },
-    { name: 'Люкс', description: 'Для особых событий и важных поездок.', boarding: 400, perKm: 40, perMinute: 10, features: ['Автомобиль бизнес-класса', 'Для особых случаев', 'Заказ в приложении'] },
+    { name: 'Эконом', description: 'Брендированный седан для повседневных поездок.', boarding: 150, perKm: 18, perMinute: 4, features: ['На каждый день', 'По городу и по делам', 'Заказ в приложении'] },
+    { name: 'Комфорт', description: 'Кроссовер для поездок с большим комфортом.', boarding: 220, perKm: 25, perMinute: 6, features: ['Кроссовер', 'Больше пространства', 'Заказ в приложении'], featured: true, badge: 'Больше комфорта' },
+    { name: 'Детский', description: 'Седан с детским креслом для поездок с ребёнком.', boarding: 200, perKm: 22, perMinute: 5, features: ['Детское кресло', 'Поездки с ребёнком', 'Заказ в приложении'] },
   ],
   // Two or three real screenshots: {src: 'assets/screen-1.webp', alt: '...'}.
   screenshots: [],

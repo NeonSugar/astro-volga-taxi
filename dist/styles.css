@@ -116,7 +116,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .tariff-card-featured{border-color:#8bb7d8;box-shadow:0 10px 28px #1f6bb21c}
 .tariff-badge{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);z-index:1;max-width:calc(100% - 24px);padding:6px 20px;border-radius:999px;background:var(--blue);box-shadow:0 4px 12px #1f6bb226;color:#fff;font-size:12px;font-weight:600;line-height:1.5;text-align:center;white-space:nowrap}
 .tariff-visual{height:170px;padding:18px 22px 0;overflow:hidden;border-radius:18px 18px 0 0;background:#fff}
-.tariff-visual img{width:100%;height:100%;object-fit:contain;transform:scale(1.2);filter:brightness(1.1) contrast(1.12)}
+.tariff-visual img{width:100%;height:100%;object-fit:contain;transform:none;filter:none}
 .tariff-content{display:flex;flex-direction:column;flex:1;padding:10px 25px 25px}
 .tariff-card h3{font-size:25px;line-height:1.3;font-weight:700;letter-spacing:-.7px;color:#0b1c28}
 .tariff-description{font-size:14px;color:#445968;margin-top:6px;line-height:1.6;min-height:45px;max-width:290px}
@@ -295,7 +295,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
 .contact-list [data-contact-address]{overflow-wrap:anywhere}
 .contact-write{min-height:60px;margin-top:26px;padding:14px 28px;gap:22px;font-size:20px}
 .contact-write .icon{width:25px;height:25px}
-.contact-photo{position:relative;min-width:0;min-height:440px;aspect-ratio:1/1.05;border-radius:110px 28px 90px 28px}
+.contact-photo{position:relative;min-width:0;aspect-ratio:1.6/1;border-radius:110px 28px 90px 28px}
 .contact-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% center;border-radius:inherit}
 .contact-photo:after{content:'';position:absolute;top:-48px;right:-45px;width:185px;height:165px;background:url("assets/pixel-cluster.svg") center/contain no-repeat;pointer-events:none;opacity:.75}
 .contact-photo figcaption{position:absolute;bottom:18px;left:22px;padding:4px 8px;border-radius:5px;background:#ffffffe3;color:#3e586c;font-size:9px;line-height:1.5}
@@ -412,7 +412,7 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .tariff-disclaimer{max-width:210px;font-size:11px}
   .tariff-grid{gap:16px}
   .tariff-visual{height:135px;padding-inline:14px}
-  .tariff-visual img{transform:scale(1.1)}
+  .tariff-visual img{transform:none}
   .tariff-content{padding:10px 18px 20px}
   .tariff-card h3{font-size:22px}
   .tariff-description{font-size:13px;min-height:43px}
@@ -852,10 +852,39 @@ h2{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-1.3px}
   .driver-benefits strong{font-size:clamp(16px,4.65vw,24px);line-height:1.25;letter-spacing:-.3px;color:#070e14}
   .driver-benefits div>span{display:block;margin-top:4px;font-size:clamp(13px,3.9vw,20px);line-height:1.3;color:#304e60}
   .driver-actions{grid-column:1;grid-row:5;display:flex;align-items:stretch;margin:2px 0 0}
-  .driver-actions>.driver-join{justify-content:space-between;min-width:0;min-height:54px;width:100%;padding:12px 22px;font-size:clamp(18px,5vw,25px)}
+  .driver-actions>.driver-join{justify-content:center;min-width:0;min-height:54px;width:100%;padding:12px 22px;font-size:clamp(18px,5vw,25px)}
   .driver-join .icon{width:25px;height:25px}
   .driver-app-note{margin-top:5px;font-size:11px;line-height:1.4;color:#172d3e}
   .driver-contact{margin-top:8px;gap:0 8px;font-size:11px;color:#172d3e}
   .driver-phone{font-size:13px;font-weight:400;color:#172d3e}
+}
+/* Portrait contacts use the same stacked composition as the driver section. */
+@media(max-width:700px) and (orientation:portrait){
+  .contact-section{padding-bottom:20px}
+  .contact-section>.contact-panel{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start;padding-block:24px 20px;background:linear-gradient(0deg,#fff,transparent 130px),#e6f3fc}
+  .contact-copy h2{grid-column:1;grid-row:1;font-size:clamp(29px,8.2vw,44px);line-height:1.15;letter-spacing:-1px}
+  .contact-intro{grid-column:1;grid-row:2;align-self:start;display:block;margin:0;font-size:clamp(17px,4.8vw,26px);line-height:1.35;color:#172d3e}
+  .contact-photo{grid-column:1;grid-row:3;width:100%;height:auto;min-height:0;aspect-ratio:1.52;border-radius:20px}
+  .contact-photo img{object-position:80% center}
+  .contact-photo:after{top:-12px;right:-8px;width:68px;height:60px;opacity:.6}
+  .contact-photo figcaption{bottom:6px;left:8px;font-size:7px;padding:2px 5px}
+  .contact-list{grid-column:1;grid-row:4;gap:14px;margin:4px 0 0}
+  .contact-list li{gap:14px;min-height:46px;align-items:center}
+  .contact-icon{width:46px;height:46px;border-radius:14px;background:#d2e9fa}
+  .contact-icon .icon{width:25px;height:25px;stroke-width:1.8}
+  .contact-list li>div{display:flex;flex-direction:column;align-items:flex-start;gap:0;flex:1;font-size:clamp(14px,4vw,20px);line-height:1.35}
+  .contact-list strong{font-size:clamp(16px,4.65vw,24px);font-weight:700;line-height:1.25;color:#070e14}
+  .contact-value{max-width:100%;min-height:44px;color:#304e60;line-height:1.35}
+  .contact-list [data-contact-address]{display:block;margin-top:5px;color:#304e60}
+}
+/* Larger supplied vehicle cutouts stay fully visible on phones. */
+@media(max-width:700px){
+  .tariff-visual{height:clamp(150px,46vw,230px);padding:12px 8px 0}
+  .tariff-visual img{transform:none;filter:none}
+  .tariff-description{display:block}
+}
+@media(max-width:700px) and (orientation:landscape){
+  .tariff-grid .tariff-card{grid-template-columns:170px minmax(0,1fr)}
+  .tariff-visual{height:164px;padding:8px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
